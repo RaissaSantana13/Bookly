@@ -8,7 +8,7 @@ namespace Bookly.Domain.Entities
         {
         }
 
-        public ReadingProcess(int id , DateTime startDate, string status, DateTime endDate, int pagesRead, User user, Book book) :base(id)
+        public ReadingProcess(int id , DateTime startDate, string status, DateTime endDate, int pagesRead, User user, Book book, List<ReadingSession> readingSessions) :base(id)
         {
             StartDate=startDate;
             Status=status;  
@@ -16,6 +16,8 @@ namespace Bookly.Domain.Entities
             PagesRead=pagesRead;
             User = user;
             Book=book;
+            ReadingSessions=new List<ReadingSession>();
+
         }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
@@ -23,5 +25,6 @@ namespace Bookly.Domain.Entities
         public int PagesRead { get; set; }
         public User User { get; set; }
         public Book Book { get; set; }
+        public List<ReadingSession> ReadingSessions { get; set; } = [];
     }
 }

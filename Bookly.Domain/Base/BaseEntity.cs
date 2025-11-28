@@ -1,6 +1,8 @@
-﻿namespace Bookly.Domain.Base
+﻿using Bookly.Domain.Base;
+
+namespace Bookly.Domain.Base
 {
-    public abstract class BaseEntity<TID>
+    public abstract class BaseEntity<TID> : IBaseEntity
     {
         protected BaseEntity(){
         

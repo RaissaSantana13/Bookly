@@ -8,13 +8,11 @@ namespace Bookly.Domain.Entities
         {
         }
 
-        public Achivement(int id, string name, string description)
+        public Achivement(int id, string name, string description) : base(id)
         {
             Name= name;
             Description= description;
         }
-
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
 
