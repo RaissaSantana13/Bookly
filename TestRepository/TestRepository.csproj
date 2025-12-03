@@ -24,6 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Bookly.Domain\Bookly.Domain.csproj" />
     <ProjectReference Include="..\Bookly.Repository\Bookly.Repository.csproj" />
+    <ProjectReference Include="..\Bookly.Service\Bookly.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>

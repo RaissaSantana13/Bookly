@@ -20,23 +20,23 @@ namespace TestRepository
             {
                 Console.WriteLine("Connected!");
 
-                var Book1 = new Book { Id= 1, Title=  "Harry Potter", PublicationYear=  2002, Pages= 120 };
-                var Book2 = new Book { Id = 2, Title = "Dom casmurro", PublicationYear = 1989, Pages = 350 };
-                var Book3 = new Book { Id = 3, Title = "Lady Killers", PublicationYear = 2015, Pages = 400 };
-
-                context.Books.Add(Book1);
-                context.Books.Add(Book2);
-                context.Books.Add(Book3);
-
-                context.SaveChanges();
-
-                var genre1 = new Genre { Id = 1, Name = "Suspense", Books = [Book1]};
+                var genre1 = new Genre { Id = 1, Name = "Suspense"};
                 var genre2 = new Genre { Id = 2, Name = "Terror" };
                 var genre3 = new Genre { Id = 3, Name = "Poesia" };
 
                 context.Genres.Add(genre1);
                 context.Genres.Add(genre2);
                 context.Genres.Add(genre3);
+
+                context.SaveChanges();
+
+                var Book1 = new Book { Id = 1, Title = "Harry Potter", PublicationYear = 2002, Pages = 120, Genres= [genre1] };
+                var Book2 = new Book { Id = 2, Title = "Dom casmurro", PublicationYear = 1989, Pages = 350 };
+                var Book3 = new Book { Id = 3, Title = "Lady Killers", PublicationYear = 2015, Pages = 400 };
+
+                context.Books.Add(Book1);
+                context.Books.Add(Book2);
+                context.Books.Add(Book3);
 
                 context.SaveChanges();
 

@@ -5,7 +5,7 @@ namespace Bookly.Domain.Base
        where TEntity : IBaseEntity
     {
         void ClearChangeTracker();
-        void AtachObjetct(object obj);
+        void AttachObject(object obj);
         void Insert(TEntity entity);
         void Update(TEntity entity);
         void Delete(object id);
