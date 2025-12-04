@@ -1,14 +1,15 @@
 ﻿
 using AutoMapper;
-using Bookly.Domain.Base;
-using Bookly.Repository.Repository;
-using Bookly.Service.Service;
+using Bookly.App.Others;
 using Bookly.App.Register;
 using Bookly.App.ViewModel;
+using Bookly.Domain.Base;
 using Bookly.Domain.Base;
 using Bookly.Domain.Entities;
 using Bookly.Repository.Context;
 using Bookly.Repository.Repository;
+using Bookly.Repository.Repository;
+using Bookly.Service.Service;
 using Bookly.Service.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,6 +53,7 @@ namespace Bookly.App.Infra
             #region Forms
             //services.AddTransistent<CategoryForm, CategoryForm>();
             services.AddScoped<RegisterUserForm, RegisterUserForm>();
+            services.AddTransient<LoginForm>();
             #endregion
 
 

@@ -32,8 +32,8 @@ namespace Bookly.App.Others
 
             else
             {
-                DialogResult = DialogResult.OK;
-                Close();
+                MessageBox.Show("Login Sucesso", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               Close();
             }
         }
 
