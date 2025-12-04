@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Bookly.Domain.Entities;
 
-namespace Bookly.Service.Validatorrs
+namespace Bookly.Service.Validators
 {
     public class ReadingSessionValidator : AbstractValidator<ReadingSession>
     {

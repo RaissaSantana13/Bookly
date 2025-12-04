@@ -4,7 +4,7 @@ using Bookly.Domain.Entities;
 using Bookly.Repository.Context;
 using Bookly.Repository.Repository;
 using Bookly.Service.Service;
-using Bookly.Service.Validatorrs;
+using Bookly.Service.Validators;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Text.Json;

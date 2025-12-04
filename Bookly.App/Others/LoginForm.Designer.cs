@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             hopeGroupBox1 = new ReaLTaiizor.Controls.HopeGroupBox();
+            btnLogin = new ReaLTaiizor.Controls.CyberButton();
             label2 = new Label();
             label1 = new Label();
             txtPassword = new ReaLTaiizor.Controls.BigTextBox();
             txtEmail = new ReaLTaiizor.Controls.BigTextBox();
             pictureBox1 = new PictureBox();
-            btnLogin = new ReaLTaiizor.Controls.CyberButton();
             hopeGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // hopeGroupBox1
             // 
-            hopeGroupBox1.Anchor = AnchorStyles.Left;
+            hopeGroupBox1.Anchor = AnchorStyles.None;
             hopeGroupBox1.BorderColor = Color.FromArgb(220, 223, 230);
             hopeGroupBox1.Controls.Add(btnLogin);
             hopeGroupBox1.Controls.Add(label2);
@@ -52,7 +52,7 @@
             hopeGroupBox1.Font = new Font("Segoe UI", 12F);
             hopeGroupBox1.ForeColor = Color.FromArgb(48, 49, 51);
             hopeGroupBox1.LineColor = Color.FromArgb(220, 223, 230);
-            hopeGroupBox1.Location = new Point(98, 101);
+            hopeGroupBox1.Location = new Point(163, 363);
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.ShowText = false;
             hopeGroupBox1.Size = new Size(362, 376);
@@ -60,6 +60,49 @@
             hopeGroupBox1.TabStop = false;
             hopeGroupBox1.Text = "hopeGroupBox1";
             hopeGroupBox1.ThemeColor = Color.FromArgb(209, 186, 255);
+            // 
+            // btnLogin
+            // 
+            btnLogin.Alpha = 20;
+            btnLogin.Anchor = AnchorStyles.Left;
+            btnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnLogin.BackColor = Color.Transparent;
+            btnLogin.Background = true;
+            btnLogin.Background_WidthPen = 1F;
+            btnLogin.BackgroundPen = true;
+            btnLogin.ColorBackground = Color.FromArgb(146, 227, 169);
+            btnLogin.ColorBackground_1 = Color.FromArgb(179, 229, 196);
+            btnLogin.ColorBackground_2 = Color.FromArgb(179, 229, 196);
+            btnLogin.ColorBackground_Pen = Color.Gray;
+            btnLogin.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnLogin.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnLogin.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnLogin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnLogin.Effect_1 = true;
+            btnLogin.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnLogin.Effect_1_Transparency = 25;
+            btnLogin.Effect_2 = true;
+            btnLogin.Effect_2_ColorBackground = Color.White;
+            btnLogin.Effect_2_Transparency = 20;
+            btnLogin.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.FromArgb(245, 245, 245);
+            btnLogin.Lighting = false;
+            btnLogin.LinearGradient_Background = false;
+            btnLogin.LinearGradientPen = false;
+            btnLogin.Location = new Point(69, 285);
+            btnLogin.Name = "btnLogin";
+            btnLogin.PenWidth = 15;
+            btnLogin.Rounding = true;
+            btnLogin.RoundingInt = 70;
+            btnLogin.Size = new Size(200, 55);
+            btnLogin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnLogin.TabIndex = 7;
+            btnLogin.Tag = "Cyber";
+            btnLogin.TextButton = "Login";
+            btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnLogin.Timer_Effect_1 = 5;
+            btnLogin.Timer_RGB = 300;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label2
             // 
@@ -117,56 +160,14 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.Login;
-            pictureBox1.Location = new Point(226, -91);
+            pictureBox1.Location = new Point(1008, 198);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(600, 600);
+            pictureBox1.Size = new Size(722, 671);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // btnLogin
-            // 
-            btnLogin.Alpha = 20;
-            btnLogin.Anchor = AnchorStyles.Left;
-            btnLogin.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnLogin.BackColor = Color.Transparent;
-            btnLogin.Background = true;
-            btnLogin.Background_WidthPen = 1F;
-            btnLogin.BackgroundPen = true;
-            btnLogin.ColorBackground = Color.FromArgb(146, 227, 169);
-            btnLogin.ColorBackground_1 = Color.FromArgb(179, 229, 196);
-            btnLogin.ColorBackground_2 = Color.FromArgb(179, 229, 196);
-            btnLogin.ColorBackground_Pen = Color.Gray;
-            btnLogin.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnLogin.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnLogin.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnLogin.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnLogin.Effect_1 = true;
-            btnLogin.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnLogin.Effect_1_Transparency = 25;
-            btnLogin.Effect_2 = true;
-            btnLogin.Effect_2_ColorBackground = Color.White;
-            btnLogin.Effect_2_Transparency = 20;
-            btnLogin.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = Color.FromArgb(245, 245, 245);
-            btnLogin.Lighting = false;
-            btnLogin.LinearGradient_Background = false;
-            btnLogin.LinearGradientPen = false;
-            btnLogin.Location = new Point(69, 285);
-            btnLogin.Name = "btnLogin";
-            btnLogin.PenWidth = 15;
-            btnLogin.Rounding = true;
-            btnLogin.RoundingInt = 70;
-            btnLogin.Size = new Size(200, 55);
-            btnLogin.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnLogin.TabIndex = 7;
-            btnLogin.Tag = "Cyber";
-            btnLogin.TextButton = "Login";
-            btnLogin.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnLogin.Timer_Effect_1 = 5;
-            btnLogin.Timer_RGB = 300;
             // 
             // LoginForm
             // 
@@ -175,7 +176,7 @@
             AutoSize = true;
             BackColor = Color.FromArgb(30, 30, 38);
             BorderColor = Color.DarkSlateBlue;
-            ClientSize = new Size(909, 566);
+            ClientSize = new Size(1980, 1080);
             Controls.Add(pictureBox1);
             Controls.Add(hopeGroupBox1);
             HeaderColor = Color.FromArgb(126, 87, 194);

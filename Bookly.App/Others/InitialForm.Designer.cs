@@ -33,7 +33,7 @@
             label1 = new Label();
             label2 = new Label();
             imageList1 = new ImageList(components);
-            cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
+            loginBtn = new ReaLTaiizor.Controls.CyberButton();
             registerBtn = new ReaLTaiizor.Controls.CyberButton();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -47,7 +47,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(164, 110, 217);
-            label1.Location = new Point(97, 134);
+            label1.Location = new Point(144, 396);
             label1.Name = "label1";
             label1.Size = new Size(233, 81);
             label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(179, 229, 196);
-            label2.Location = new Point(97, 215);
+            label2.Location = new Point(144, 477);
             label2.Name = "label2";
             label2.Size = new Size(418, 74);
             label2.TabIndex = 1;
@@ -72,47 +72,48 @@
             imageList1.TransparentColor = Color.Transparent;
             imageList1.Images.SetKeyName(0, "initial_image.png");
             // 
-            // cyberButton1
+            // loginBtn
             // 
-            cyberButton1.Alpha = 20;
-            cyberButton1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cyberButton1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            cyberButton1.BackColor = Color.Transparent;
-            cyberButton1.Background = true;
-            cyberButton1.Background_WidthPen = 0F;
-            cyberButton1.BackgroundPen = true;
-            cyberButton1.ColorBackground = Color.FromArgb(179, 229, 196);
-            cyberButton1.ColorBackground_1 = Color.FromArgb(179, 229, 196);
-            cyberButton1.ColorBackground_2 = Color.FromArgb(179, 229, 196);
-            cyberButton1.ColorBackground_Pen = Color.Gray;
-            cyberButton1.ColorLighting = Color.FromArgb(29, 200, 238);
-            cyberButton1.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            cyberButton1.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            cyberButton1.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            cyberButton1.Effect_1 = true;
-            cyberButton1.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            cyberButton1.Effect_1_Transparency = 25;
-            cyberButton1.Effect_2 = true;
-            cyberButton1.Effect_2_ColorBackground = Color.White;
-            cyberButton1.Effect_2_Transparency = 20;
-            cyberButton1.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            cyberButton1.ForeColor = Color.FromArgb(245, 245, 245);
-            cyberButton1.Lighting = false;
-            cyberButton1.LinearGradient_Background = false;
-            cyberButton1.LinearGradientPen = false;
-            cyberButton1.Location = new Point(737, 56);
-            cyberButton1.Name = "cyberButton1";
-            cyberButton1.PenWidth = 15;
-            cyberButton1.Rounding = true;
-            cyberButton1.RoundingInt = 70;
-            cyberButton1.Size = new Size(97, 44);
-            cyberButton1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            cyberButton1.TabIndex = 5;
-            cyberButton1.Tag = "Cyber";
-            cyberButton1.TextButton = "Login";
-            cyberButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            cyberButton1.Timer_Effect_1 = 5;
-            cyberButton1.Timer_RGB = 300;
+            loginBtn.Alpha = 20;
+            loginBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            loginBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            loginBtn.BackColor = Color.Transparent;
+            loginBtn.Background = true;
+            loginBtn.Background_WidthPen = 0F;
+            loginBtn.BackgroundPen = true;
+            loginBtn.ColorBackground = Color.FromArgb(179, 229, 196);
+            loginBtn.ColorBackground_1 = Color.FromArgb(179, 229, 196);
+            loginBtn.ColorBackground_2 = Color.FromArgb(179, 229, 196);
+            loginBtn.ColorBackground_Pen = Color.Gray;
+            loginBtn.ColorLighting = Color.FromArgb(29, 200, 238);
+            loginBtn.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            loginBtn.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            loginBtn.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            loginBtn.Effect_1 = true;
+            loginBtn.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            loginBtn.Effect_1_Transparency = 25;
+            loginBtn.Effect_2 = true;
+            loginBtn.Effect_2_ColorBackground = Color.White;
+            loginBtn.Effect_2_Transparency = 20;
+            loginBtn.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            loginBtn.ForeColor = Color.FromArgb(245, 245, 245);
+            loginBtn.Lighting = false;
+            loginBtn.LinearGradient_Background = false;
+            loginBtn.LinearGradientPen = false;
+            loginBtn.Location = new Point(1781, 56);
+            loginBtn.Name = "loginBtn";
+            loginBtn.PenWidth = 15;
+            loginBtn.Rounding = true;
+            loginBtn.RoundingInt = 70;
+            loginBtn.Size = new Size(97, 44);
+            loginBtn.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            loginBtn.TabIndex = 5;
+            loginBtn.Tag = "Cyber";
+            loginBtn.TextButton = "Login";
+            loginBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            loginBtn.Timer_Effect_1 = 5;
+            loginBtn.Timer_RGB = 300;
+            loginBtn.Click += loginBtn_Click;
             // 
             // registerBtn
             // 
@@ -142,7 +143,7 @@
             registerBtn.Lighting = false;
             registerBtn.LinearGradient_Background = false;
             registerBtn.LinearGradientPen = false;
-            registerBtn.Location = new Point(113, 325);
+            registerBtn.Location = new Point(160, 587);
             registerBtn.Name = "registerBtn";
             registerBtn.PenWidth = 15;
             registerBtn.Rounding = true;
@@ -155,6 +156,7 @@
             registerBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             registerBtn.Timer_Effect_1 = 5;
             registerBtn.Timer_RGB = 300;
+            registerBtn.Click += registerBtn_Click;
             // 
             // pictureBox1
             // 
@@ -168,11 +170,11 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox2.Anchor = AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources.initial_image;
-            pictureBox2.Location = new Point(195, -157);
+            pictureBox2.Location = new Point(1034, 209);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(600, 600);
+            pictureBox2.Size = new Size(657, 684);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 8;
             pictureBox2.TabStop = false;
@@ -183,11 +185,11 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderColor = Color.DarkSlateBlue;
-            ClientSize = new Size(876, 503);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(registerBtn);
-            Controls.Add(cyberButton1);
+            Controls.Add(loginBtn);
             Controls.Add(label2);
             Controls.Add(label1);
             HeaderColor = Color.FromArgb(126, 87, 194);
@@ -207,7 +209,7 @@
         private Label label1;
         private Label label2;
         private ImageList imageList1;
-        private ReaLTaiizor.Controls.CyberButton cyberButton1;
+        private ReaLTaiizor.Controls.CyberButton loginBtn;
         private ReaLTaiizor.Controls.CyberButton registerBtn;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;

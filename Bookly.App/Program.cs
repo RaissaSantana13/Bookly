@@ -1,3 +1,4 @@
+using Bookly.App.Infra;
 using Bookly.App.Others;
 
 namespace Bookly.App
@@ -12,6 +13,7 @@ namespace Bookly.App
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            ConfigureDI.ConfigureServices();
             ApplicationConfiguration.Initialize();
             Application.Run(new InitialForm());
         }

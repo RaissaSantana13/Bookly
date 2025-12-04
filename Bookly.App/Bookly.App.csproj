@@ -24,7 +24,6 @@
     <Folder Include="Base\" />
     <Folder Include="Config\" />
     <Folder Include="Resources\" />
-    <Folder Include="Register\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Config\DbConfig.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\bookly.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

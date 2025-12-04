@@ -3,7 +3,7 @@ using AutoMapper;
 using Bookly.Domain.Base;
 using Bookly.Repository.Repository;
 using Bookly.Service.Service;
-//using Bookly.App.Register;
+using Bookly.App.Register;
 using Bookly.App.ViewModel;
 using Bookly.Domain.Base;
 using Bookly.Domain.Entities;
@@ -15,7 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging.Abstractions;
 using System.Net.NetworkInformation;
 
-namespace IFSPStore.app.Infra
+namespace Bookly.App.Infra
 {
     public static class ConfigureDI
     {
@@ -24,7 +24,7 @@ namespace IFSPStore.app.Infra
         public static void ConfigureServices()
         {
             // data base config
-            var dbConfigFile = "Config/DBCOnfig.txt";
+            var dbConfigFile = "Config/DbConfig.txt";
             var strCon = File.ReadAllText(dbConfigFile);
             services = new ServiceCollection();
             services.AddDbContext<BooklyContext>(
@@ -46,24 +46,23 @@ namespace IFSPStore.app.Infra
 
             #region Service
             //services.AddScoped<IBaseService<Author>, BaseService<Book>>();
-            //services.AddScoped<IBaseService<User>, BaseService<User>>();
+            services.AddScoped<IBaseService<User>, BaseService<User>>();
             #endregion
 
             #region Forms
             //services.AddTransistent<CategoryForm, CategoryForm>();
-            //services.AddScoped<UserForm, UserForm>();
+            services.AddScoped<RegisterUserForm, RegisterUserForm>();
             #endregion
 
 
-            /*services.AddSingleton(
+            services.AddSingleton(
                 new MapperConfiguration(
                     config => {
                         config.CreateMap<User, UserViewModel>();
-                        config.CreateMap<Category, CategoryViewModel>();
                     },
                     NullLoggerFactory.Instance).CreateMapper()
                 );
-            serviceProvider = services.BuildServiceProvider();*/
+            serviceProvider = services.BuildServiceProvider();
 
         }
     }

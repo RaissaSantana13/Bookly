@@ -1,4 +1,5 @@
-﻿namespace Bookly.App.Others
+﻿
+namespace Bookly.App.Register
 {
     partial class RegisterUserForm
     {
@@ -58,7 +59,7 @@
             hopeGroupBox1.Font = new Font("Segoe UI", 12F);
             hopeGroupBox1.ForeColor = Color.FromArgb(48, 49, 51);
             hopeGroupBox1.LineColor = Color.FromArgb(220, 223, 230);
-            hopeGroupBox1.Location = new Point(74, 78);
+            hopeGroupBox1.Location = new Point(206, 308);
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.ShowText = false;
             hopeGroupBox1.Size = new Size(362, 468);
@@ -108,6 +109,7 @@
             btnRegister.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnRegister.Timer_Effect_1 = 5;
             btnRegister.Timer_RGB = 300;
+            btnRegister.Click += this.btnRegister_Click;
             // 
             // txtName
             // 
@@ -234,11 +236,11 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.register;
-            pictureBox1.Location = new Point(236, -43);
+            pictureBox1.Location = new Point(1124, 183);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(600, 600);
+            pictureBox1.Size = new Size(645, 649);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
@@ -248,7 +250,7 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderColor = Color.DarkSlateBlue;
-            ClientSize = new Size(887, 613);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(pictureBox1);
             Controls.Add(hopeGroupBox1);
             HeaderColor = Color.FromArgb(126, 87, 194);
@@ -262,7 +264,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
-
         #endregion
 
         private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox1;
