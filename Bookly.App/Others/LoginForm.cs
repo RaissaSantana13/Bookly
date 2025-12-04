@@ -32,8 +32,10 @@ namespace Bookly.App.Others
 
             else
             {
-                MessageBox.Show("Login Sucesso", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-               Close();
+                UserSession.CurrentUser = user;
+                MessageBox.Show($"Bem-vindo, {user.Name}!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                Close();
             }
         }
 

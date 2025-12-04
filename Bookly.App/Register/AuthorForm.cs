@@ -1,8 +1,15 @@
 ﻿using Bookly.App.Base;
 using Bookly.Domain.Base;
-using Bookly.Domain.Entities;     
-using Bookly.Service.Validators;  
+using Bookly.Domain.Entities;
+using Bookly.Service.Validators;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookly.App.Register
@@ -47,5 +54,7 @@ namespace Bookly.App.Register
                 MessageBox.Show(ex.Message, @"Bookly", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

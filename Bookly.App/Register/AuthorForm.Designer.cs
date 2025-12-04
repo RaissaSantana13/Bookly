@@ -32,6 +32,14 @@
             txtId = new ReaLTaiizor.Controls.HopeTextBox();
             SuspendLayout();
             // 
+            // saveBtn
+            // 
+            saveBtn.Location = new Point(522, 140);
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.Location = new Point(632, 140);
+            // 
             // txtName
             // 
             txtName.BackColor = Color.White;
@@ -41,7 +49,7 @@
             txtName.Font = new Font("Segoe UI", 12F);
             txtName.ForeColor = Color.FromArgb(48, 49, 51);
             txtName.Hint = "Nome";
-            txtName.Location = new Point(26, 62);
+            txtName.Location = new Point(29, 64);
             txtName.MaxLength = 32767;
             txtName.Multiline = false;
             txtName.Name = "txtName";
@@ -50,7 +58,7 @@
             txtName.SelectedText = "";
             txtName.SelectionLength = 0;
             txtName.SelectionStart = 0;
-            txtName.Size = new Size(501, 38);
+            txtName.Size = new Size(498, 38);
             txtName.TabIndex = 9;
             txtName.TabStop = false;
             txtName.UseSystemPasswordChar = false;
@@ -64,7 +72,7 @@
             txtId.Font = new Font("Segoe UI", 12F);
             txtId.ForeColor = Color.FromArgb(48, 49, 51);
             txtId.Hint = "Id";
-            txtId.Location = new Point(588, 62);
+            txtId.Location = new Point(619, 64);
             txtId.MaxLength = 32767;
             txtId.Multiline = false;
             txtId.Name = "txtId";
@@ -73,7 +81,7 @@
             txtId.SelectedText = "";
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
-            txtId.Size = new Size(70, 38);
+            txtId.Size = new Size(75, 38);
             txtId.TabIndex = 10;
             txtId.TabStop = false;
             txtId.UseSystemPasswordChar = false;
@@ -82,11 +90,13 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(754, 222);
+            ClientSize = new Size(763, 204);
             Controls.Add(txtId);
             Controls.Add(txtName);
             Name = "AuthorForm";
             Text = "Registrar Autor";
+            Controls.SetChildIndex(saveBtn, 0);
+            Controls.SetChildIndex(cancelBtn, 0);
             Controls.SetChildIndex(txtName, 0);
             Controls.SetChildIndex(txtId, 0);
             ResumeLayout(false);

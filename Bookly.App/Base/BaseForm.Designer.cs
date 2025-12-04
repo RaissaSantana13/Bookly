@@ -136,7 +136,7 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.CyberButton saveBtn;
-        private ReaLTaiizor.Controls.CyberButton cancelBtn;
+        protected ReaLTaiizor.Controls.CyberButton saveBtn;
+        protected ReaLTaiizor.Controls.CyberButton cancelBtn;
     }
 }
