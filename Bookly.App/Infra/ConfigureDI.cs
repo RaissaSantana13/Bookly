@@ -46,13 +46,14 @@ namespace Bookly.App.Infra
             #endregion
 
             #region Service
-            //services.AddScoped<IBaseService<Author>, BaseService<Book>>();
+            services.AddScoped<IBaseService<Author>, BaseService<Author>>();
             services.AddScoped<IBaseService<User>, BaseService<User>>();
             #endregion
 
             #region Forms
             //services.AddTransistent<CategoryForm, CategoryForm>();
             services.AddScoped<RegisterUserForm, RegisterUserForm>();
+            services.AddScoped<AuthorForm, AuthorForm>();
             services.AddTransient<LoginForm>();
             #endregion
 
@@ -61,6 +62,7 @@ namespace Bookly.App.Infra
                 new MapperConfiguration(
                     config => {
                         config.CreateMap<User, UserViewModel>();
+                        config.CreateMap<Author, AuthorViewModel>();
                     },
                     NullLoggerFactory.Instance).CreateMapper()
                 );
