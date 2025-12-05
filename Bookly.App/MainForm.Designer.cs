@@ -32,13 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             airTabPage1 = new ReaLTaiizor.Controls.AirTabPage();
             tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            tbLibary = new TabPage();
             grpCompleted = new ReaLTaiizor.Controls.HopeGroupBox();
             lstCompleted = new ReaLTaiizor.Controls.PoisonListView();
+            chTitle2 = new ColumnHeader();
+            chAuthor2 = new ColumnHeader();
+            chData = new ColumnHeader();
             grpInProgress = new ReaLTaiizor.Controls.HopeGroupBox();
             lstInProgress = new ReaLTaiizor.Controls.PoisonListView();
+            chTitle = new ColumnHeader();
+            chAuthor = new ColumnHeader();
+            chProgress = new ColumnHeader();
+            chPercentage = new ColumnHeader();
             btnExcluir = new ReaLTaiizor.Controls.CyberButton();
-            btnEdit = new ReaLTaiizor.Controls.CyberButton();
             btnAdd = new ReaLTaiizor.Controls.CyberButton();
             btnReadingSession = new ReaLTaiizor.Controls.CyberButton();
             label3 = new Label();
@@ -46,15 +52,8 @@
             tabPage3 = new TabPage();
             imageList2 = new ImageList(components);
             imageList1 = new ImageList(components);
-            chTitle = new ColumnHeader();
-            chProgress = new ColumnHeader();
-            chPercentage = new ColumnHeader();
-            chAuthor = new ColumnHeader();
-            chTitle2 = new ColumnHeader();
-            chAuthor2 = new ColumnHeader();
-            chData = new ColumnHeader();
             airTabPage1.SuspendLayout();
-            tabPage2.SuspendLayout();
+            tbLibary.SuspendLayout();
             grpCompleted.SuspendLayout();
             grpInProgress.SuspendLayout();
             SuspendLayout();
@@ -64,7 +63,7 @@
             airTabPage1.Alignment = TabAlignment.Left;
             airTabPage1.BaseColor = Color.FromArgb(126, 87, 194);
             airTabPage1.Controls.Add(tabPage1);
-            airTabPage1.Controls.Add(tabPage2);
+            airTabPage1.Controls.Add(tbLibary);
             airTabPage1.Controls.Add(tabPage3);
             airTabPage1.ImageList = imageList2;
             airTabPage1.ItemSize = new Size(50, 85);
@@ -92,19 +91,19 @@
             tabPage1.Size = new Size(1272, 729);
             tabPage1.TabIndex = 0;
             // 
-            // tabPage2
+            // tbLibary
             // 
-            tabPage2.BackColor = Color.FromArgb(30, 30, 38);
-            tabPage2.Controls.Add(grpCompleted);
-            tabPage2.Controls.Add(grpInProgress);
-            tabPage2.Controls.Add(label3);
-            tabPage2.Controls.Add(label1);
-            tabPage2.ImageIndex = 0;
-            tabPage2.Location = new Point(89, 4);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1272, 729);
-            tabPage2.TabIndex = 1;
+            tbLibary.BackColor = Color.FromArgb(30, 30, 38);
+            tbLibary.Controls.Add(grpCompleted);
+            tbLibary.Controls.Add(grpInProgress);
+            tbLibary.Controls.Add(label3);
+            tbLibary.Controls.Add(label1);
+            tbLibary.ImageIndex = 0;
+            tbLibary.Location = new Point(89, 4);
+            tbLibary.Name = "tbLibary";
+            tbLibary.Padding = new Padding(3);
+            tbLibary.Size = new Size(1272, 729);
+            tbLibary.TabIndex = 1;
             // 
             // grpCompleted
             // 
@@ -139,13 +138,27 @@
             lstCompleted.UseSelectable = true;
             lstCompleted.View = View.Details;
             // 
+            // chTitle2
+            // 
+            chTitle2.Text = "Titulo";
+            chTitle2.Width = 500;
+            // 
+            // chAuthor2
+            // 
+            chAuthor2.Text = "Autor";
+            chAuthor2.Width = 400;
+            // 
+            // chData
+            // 
+            chData.Text = "Data de Conclusao";
+            chData.Width = 150;
+            // 
             // grpInProgress
             // 
             grpInProgress.BackColor = Color.FromArgb(156, 133, 195);
             grpInProgress.BorderColor = Color.FromArgb(220, 223, 230);
             grpInProgress.Controls.Add(lstInProgress);
             grpInProgress.Controls.Add(btnExcluir);
-            grpInProgress.Controls.Add(btnEdit);
             grpInProgress.Controls.Add(btnAdd);
             grpInProgress.Controls.Add(btnReadingSession);
             grpInProgress.Font = new Font("Segoe UI", 12F);
@@ -176,6 +189,27 @@
             lstInProgress.UseCompatibleStateImageBehavior = false;
             lstInProgress.UseSelectable = true;
             lstInProgress.View = View.Details;
+            // 
+            // chTitle
+            // 
+            chTitle.Text = "Titulo";
+            chTitle.Width = 500;
+            // 
+            // chAuthor
+            // 
+            chAuthor.Text = "Autor";
+            chAuthor.Width = 400;
+            // 
+            // chProgress
+            // 
+            chProgress.DisplayIndex = 3;
+            chProgress.Text = "Progresso";
+            chProgress.Width = 100;
+            // 
+            // chPercentage
+            // 
+            chPercentage.DisplayIndex = 2;
+            chPercentage.Text = "%";
             // 
             // btnExcluir
             // 
@@ -218,48 +252,7 @@
             btnExcluir.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnExcluir.Timer_Effect_1 = 5;
             btnExcluir.Timer_RGB = 300;
-            // 
-            // btnEdit
-            // 
-            btnEdit.Alpha = 20;
-            btnEdit.Anchor = AnchorStyles.Left;
-            btnEdit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnEdit.BackColor = Color.Transparent;
-            btnEdit.Background = true;
-            btnEdit.Background_WidthPen = 0F;
-            btnEdit.BackgroundPen = true;
-            btnEdit.ColorBackground = Color.FromArgb(179, 229, 196);
-            btnEdit.ColorBackground_1 = Color.FromArgb(179, 229, 196);
-            btnEdit.ColorBackground_2 = Color.FromArgb(179, 229, 196);
-            btnEdit.ColorBackground_Pen = Color.Gray;
-            btnEdit.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnEdit.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnEdit.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnEdit.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnEdit.Effect_1 = true;
-            btnEdit.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnEdit.Effect_1_Transparency = 25;
-            btnEdit.Effect_2 = true;
-            btnEdit.Effect_2_ColorBackground = Color.White;
-            btnEdit.Effect_2_Transparency = 20;
-            btnEdit.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEdit.ForeColor = Color.FromArgb(245, 245, 245);
-            btnEdit.Lighting = false;
-            btnEdit.LinearGradient_Background = false;
-            btnEdit.LinearGradientPen = false;
-            btnEdit.Location = new Point(864, 219);
-            btnEdit.Name = "btnEdit";
-            btnEdit.PenWidth = 15;
-            btnEdit.Rounding = true;
-            btnEdit.RoundingInt = 70;
-            btnEdit.Size = new Size(84, 43);
-            btnEdit.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnEdit.TabIndex = 9;
-            btnEdit.Tag = "Cyber";
-            btnEdit.TextButton = "Editar";
-            btnEdit.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnEdit.Timer_Effect_1 = 5;
-            btnEdit.Timer_RGB = 300;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnAdd
             // 
@@ -289,7 +282,7 @@
             btnAdd.Lighting = false;
             btnAdd.LinearGradient_Background = false;
             btnAdd.LinearGradientPen = false;
-            btnAdd.Location = new Point(738, 219);
+            btnAdd.Location = new Point(837, 219);
             btnAdd.Name = "btnAdd";
             btnAdd.PenWidth = 15;
             btnAdd.Rounding = true;
@@ -302,6 +295,7 @@
             btnAdd.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnAdd.Timer_Effect_1 = 5;
             btnAdd.Timer_RGB = 300;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnReadingSession
             // 
@@ -331,7 +325,7 @@
             btnReadingSession.Lighting = false;
             btnReadingSession.LinearGradient_Background = false;
             btnReadingSession.LinearGradientPen = false;
-            btnReadingSession.Location = new Point(460, 219);
+            btnReadingSession.Location = new Point(561, 219);
             btnReadingSession.Name = "btnReadingSession";
             btnReadingSession.PenWidth = 15;
             btnReadingSession.Rounding = true;
@@ -344,6 +338,7 @@
             btnReadingSession.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnReadingSession.Timer_Effect_1 = 5;
             btnReadingSession.Timer_RGB = 300;
+            btnReadingSession.Click += btnReadingSession_Click;
             // 
             // label3
             // 
@@ -393,42 +388,6 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
-            // chTitle
-            // 
-            chTitle.Text = "Titulo";
-            chTitle.Width = 500;
-            // 
-            // chProgress
-            // 
-            chProgress.DisplayIndex = 3;
-            chProgress.Text = "Progresso";
-            chProgress.Width = 100;
-            // 
-            // chPercentage
-            // 
-            chPercentage.DisplayIndex = 2;
-            chPercentage.Text = "%";
-            // 
-            // chAuthor
-            // 
-            chAuthor.Text = "Autor";
-            chAuthor.Width = 400;
-            // 
-            // chTitle2
-            // 
-            chTitle2.Text = "Titulo";
-            chTitle2.Width = 500;
-            // 
-            // chAuthor2
-            // 
-            chAuthor2.Text = "Autor";
-            chAuthor2.Width = 400;
-            // 
-            // chData
-            // 
-            chData.Text = "Data de Conclusao";
-            chData.Width = 150;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -442,8 +401,8 @@
             Name = "MainForm";
             Text = "Bookly";
             airTabPage1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
+            tbLibary.ResumeLayout(false);
+            tbLibary.PerformLayout();
             grpCompleted.ResumeLayout(false);
             grpInProgress.ResumeLayout(false);
             ResumeLayout(false);
@@ -452,7 +411,7 @@
         #endregion
         private ReaLTaiizor.Controls.AirTabPage airTabPage1;
         private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tbLibary;
         private ImageList imageList2;
         private ImageList imageList1;
         private TabPage tabPage3;
@@ -461,7 +420,6 @@
         private ReaLTaiizor.Controls.HopeGroupBox grpCompleted;
         private ReaLTaiizor.Controls.HopeGroupBox grpInProgress;
         private ReaLTaiizor.Controls.CyberButton btnExcluir;
-        private ReaLTaiizor.Controls.CyberButton btnEdit;
         private ReaLTaiizor.Controls.CyberButton btnAdd;
         private ReaLTaiizor.Controls.CyberButton btnReadingSession;
         private ReaLTaiizor.Controls.PoisonListView lstCompleted;

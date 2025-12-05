@@ -15,7 +15,7 @@ namespace Bookly.App
             // see https://aka.ms/applicationconfiguration.
             ConfigureDI.ConfigureServices();
             ApplicationConfiguration.Initialize();
-            Application.Run(new InitialForm());
+            Application.Run(new MainForm());
         }
     }
 }
