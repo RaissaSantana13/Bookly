@@ -52,7 +52,7 @@
             hopeGroupBox1.Font = new Font("Segoe UI", 12F);
             hopeGroupBox1.ForeColor = Color.FromArgb(48, 49, 51);
             hopeGroupBox1.LineColor = Color.FromArgb(220, 223, 230);
-            hopeGroupBox1.Location = new Point(163, 363);
+            hopeGroupBox1.Location = new Point(136, 197);
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.ShowText = false;
             hopeGroupBox1.Size = new Size(362, 376);
@@ -162,7 +162,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.Login;
-            pictureBox1.Location = new Point(1008, 198);
+            pictureBox1.Location = new Point(613, 65);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(722, 671);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -176,7 +176,7 @@
             AutoSize = true;
             BackColor = Color.FromArgb(30, 30, 38);
             BorderColor = Color.DarkSlateBlue;
-            ClientSize = new Size(1980, 1080);
+            ClientSize = new Size(1366, 768);
             Controls.Add(pictureBox1);
             Controls.Add(hopeGroupBox1);
             HeaderColor = Color.FromArgb(126, 87, 194);

@@ -59,7 +59,7 @@ namespace Bookly.App.Register
             hopeGroupBox1.Font = new Font("Segoe UI", 12F);
             hopeGroupBox1.ForeColor = Color.FromArgb(48, 49, 51);
             hopeGroupBox1.LineColor = Color.FromArgb(220, 223, 230);
-            hopeGroupBox1.Location = new Point(206, 308);
+            hopeGroupBox1.Location = new Point(181, 153);
             hopeGroupBox1.Name = "hopeGroupBox1";
             hopeGroupBox1.ShowText = false;
             hopeGroupBox1.Size = new Size(362, 468);
@@ -109,7 +109,7 @@ namespace Bookly.App.Register
             btnRegister.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnRegister.Timer_Effect_1 = 5;
             btnRegister.Timer_RGB = 300;
-            btnRegister.Click += this.btnRegister_Click;
+            btnRegister.Click += btnRegister_Click;
             // 
             // txtName
             // 
@@ -238,7 +238,7 @@ namespace Bookly.App.Register
             // 
             pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.register;
-            pictureBox1.Location = new Point(1124, 183);
+            pictureBox1.Location = new Point(652, 82);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(645, 649);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -250,12 +250,12 @@ namespace Bookly.App.Register
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BorderColor = Color.DarkSlateBlue;
-            ClientSize = new Size(1920, 1080);
+            ClientSize = new Size(1366, 768);
             Controls.Add(pictureBox1);
             Controls.Add(hopeGroupBox1);
             HeaderColor = Color.FromArgb(126, 87, 194);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Image = Properties.Resources.bookly;
+            Image = null;
             Name = "RegisterUserForm";
             Text = "Register";
             WindowState = FormWindowState.Maximized;

@@ -47,7 +47,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(164, 110, 217);
-            label1.Location = new Point(144, 250);
+            label1.Location = new Point(144, 240);
             label1.Name = "label1";
             label1.Size = new Size(233, 81);
             label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(179, 229, 196);
-            label2.Location = new Point(144, 331);
+            label2.Location = new Point(144, 321);
             label2.Name = "label2";
             label2.Size = new Size(418, 74);
             label2.TabIndex = 1;
@@ -100,7 +100,7 @@
             loginBtn.Lighting = false;
             loginBtn.LinearGradient_Background = false;
             loginBtn.LinearGradientPen = false;
-            loginBtn.Location = new Point(1247, 56);
+            loginBtn.Location = new Point(1227, 56);
             loginBtn.Name = "loginBtn";
             loginBtn.PenWidth = 15;
             loginBtn.Rounding = true;
@@ -143,7 +143,7 @@
             registerBtn.Lighting = false;
             registerBtn.LinearGradient_Background = false;
             registerBtn.LinearGradientPen = false;
-            registerBtn.Location = new Point(160, 441);
+            registerBtn.Location = new Point(160, 431);
             registerBtn.Name = "registerBtn";
             registerBtn.PenWidth = 15;
             registerBtn.Rounding = true;
@@ -172,7 +172,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources.initial_image;
-            pictureBox2.Location = new Point(500, 63);
+            pictureBox2.Location = new Point(568, 56);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(657, 684);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -186,7 +186,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 38);
             BorderColor = Color.DarkSlateBlue;
-            ClientSize = new Size(1386, 788);
+            ClientSize = new Size(1366, 768);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(registerBtn);
@@ -199,6 +199,7 @@
             Name = "InitialForm";
             Text = "Bookly";
             WindowState = FormWindowState.Maximized;
+            Load += InitialForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

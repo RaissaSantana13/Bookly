@@ -23,12 +23,17 @@ namespace Bookly.App.Others
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            // ShowForm<RegisterUserForm>();
-            ShowForm<AuthorForm>();
+            ShowForm<RegisterUserForm>();
+            // ShowForm<AuthorForm>();
         }
         private void loginBtn_Click(object sender, EventArgs e)
         {
             ShowForm<LoginForm>();
+        }
+
+        private void InitialForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void ShowForm<TFormulario>() where TFormulario : Form
