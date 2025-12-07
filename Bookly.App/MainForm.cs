@@ -16,34 +16,83 @@ namespace Bookly.App
             InitializeComponent();
             _readingProcessService = ConfigureDI.serviceProvider.GetService<IBaseService<ReadingProcess>>();
             AdjustColumnWidths();
-            LoadLists();
+            PopulateLists();
         }
 
         #region Libary
-        private void LoadLists()
+        protected void PopulateLists()
         {
+            var result = _readingProcessService?.Get<ReadingProcessViewModel>(new List<string> { "Book", "Book.Authors" });
+
+            // 2. BLINDAGEM:
+            // O operador '??' significa: "Se o que está à esquerda for nulo, use o que está à direita".
+            // Ou seja, se vier nulo, criamos uma lista vazia para o código não quebrar.
+            var processes = result?.ToList() ?? new List<ReadingProcessViewModel>();
+
+            // Daqui pra baixo o código segue normal. 
+            // Se a lista estiver vazia, ele limpa a tela e não entra no foreach.
             lstInProgress.Items.Clear();
             lstCompleted.Items.Clear();
-            var readingProcesses = _readingProcessService.Get<ReadingProcessViewModel>(new List<string> { "Book", "Book.Authors" });
 
-            foreach (var process in readingProcesses)
+            // 3. Preenche as listas (Adaptação para ListView)
+            // Como ListView não tem DataSource, fazemos um loop limpo
+            foreach (var process in processes)
             {
+                // Prepara os dados de exibição antes de criar o item
+                string authorName = GetAuthorName(process);
                 bool isCompleted = process.Status == "Concluído" || process.Status == "Completed";
-                string authorName = "Unknown";
-                if (process.Book.Authors != null && process.Book.Authors.Any())
-                {
-                    authorName = string.Join(", ", process.Book.Authors.Select(a => a.Name));
-                }
 
                 if (isCompleted)
                 {
-                    AddToCompletedList(process, authorName);
+                    var item = CreateCompletedItem(process, authorName);
+                    lstCompleted.Items.Add(item);
                 }
                 else
                 {
-                    AddToInProgressList(process, authorName);
+                    var item = CreateInProgressItem(process, authorName);
+                    lstInProgress.Items.Add(item);
                 }
             }
+        }
+
+        private string GetAuthorName(ReadingProcessViewModel process)
+        {
+            if (process.Book.Authors != null && process.Book.Authors.Any())
+            {
+                return string.Join(", ", process.Book.Authors.Select(a => a.Name));
+            }
+            return "Unknown";
+        }
+
+        private ListViewItem CreateCompletedItem(ReadingProcessViewModel process, string authorName)
+        {
+            var item = new ListViewItem(process.Book.Title);
+            item.SubItems.Add(authorName);
+
+            string dateText = process.EndDate != DateTime.MinValue
+                              ? process.EndDate.ToString("dd/MM/yyyy")
+                              : "-";
+            item.SubItems.Add(dateText);
+
+            item.ForeColor = Color.DimGray;
+            item.Tag = process; // Importante para o clique funcionar
+            return item;
+        }
+
+        private ListViewItem CreateInProgressItem(ReadingProcessViewModel process, string authorName)
+        {
+            var item = new ListViewItem(process.Book.Title);
+            item.SubItems.Add(authorName);
+            item.SubItems.Add($"{process.PagesRead} / {process.Book.Pages}");
+
+            int percentage = process.Book.Pages > 0
+                             ? (process.PagesRead * 100) / process.Book.Pages
+                             : 0;
+            item.SubItems.Add($"{percentage}%");
+
+            item.ForeColor = Color.Black;
+            item.Tag = process; // Importante para o clique funcionar
+            return item;
         }
 
         private void AddToCompletedList(ReadingProcessViewModel process, string authorName)
@@ -118,7 +167,7 @@ namespace Bookly.App
 
                 if (result == DialogResult.OK)
                 {
-                    LoadLists();
+                    
                 }
             }
         }
@@ -150,14 +199,14 @@ namespace Bookly.App
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    LoadLists();
+                    
                 }
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ShowForm<RegisterUserForm>();
+            ShowForm<BookForm>();
         }
 
 
@@ -182,7 +231,7 @@ namespace Bookly.App
                 try
                 {
                     _readingProcessService.Delete(selectedProcess.Id);
-                    LoadLists();
+                   
                     MessageBox.Show("Book removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -200,7 +249,6 @@ namespace Bookly.App
             var cad = ConfigureDI.serviceProvider!.GetService<TFormulario>();
             if (cad != null && !cad.IsDisposed)
             {
-                cad.MdiParent = this;
                 cad.Show();
             }
         }

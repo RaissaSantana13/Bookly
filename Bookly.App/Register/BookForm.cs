@@ -1,8 +1,10 @@
 ﻿using Bookly.App.Base;
+using Bookly.App.Infra;
 using Bookly.App.Others;
 using Bookly.Domain.Base;
 using Bookly.Domain.Entities;
 using Bookly.Service.Validators;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,39 +23,75 @@ namespace Bookly.App.Register
         private readonly IBaseService<Author> _authorService;
         private readonly IBaseService<Genre> _genreService;
         private readonly IBaseService<ReadingProcess> _processService;
-        public BookForm(IBaseService<Book> bookService,
-            IBaseService<Author> authorService,
-            IBaseService<Genre> genreService,
-            IBaseService<ReadingProcess> processService)
+        public BookForm()
         {
-            _bookService = bookService;
-            _authorService = authorService;
-            _genreService = genreService;
-            _processService = processService;
-            
+            _bookService = ConfigureDI.serviceProvider.GetService<IBaseService<Book>>();
+            _authorService = ConfigureDI.serviceProvider.GetService<IBaseService<Author>>();
+            _genreService = ConfigureDI.serviceProvider.GetService<IBaseService<Genre>>();
+            _processService = ConfigureDI.serviceProvider.GetService<IBaseService<ReadingProcess>>();
+
             InitializeComponent();
             LoadData();
         }
 
+        public BookForm(Book book) : this() 
+        {
+            IsEditMode = true;
+            FillFields(book);
+        }
+
         private void LoadData()
         {
-            // Carrega Gêneros
             var genres = _genreService.Get<Genre>().ToList();
             clbGenres.DataSource = genres;
             clbGenres.DisplayMember = "Name";
             clbGenres.ValueMember = "Id";
 
-            // Carrega Autores
+            
             var authors = _authorService.Get<Author>().OrderBy(a => a.Name).ToList();
             clbAuthors.DataSource = authors;
             clbAuthors.DisplayMember = "Name";
             clbAuthors.ValueMember = "Id";
 
-            // Configura o ComboBox de Status
+            
             cbStatus.Items.Clear();
             cbStatus.Items.Add("Lendo");
             cbStatus.Items.Add("Concluído");
             cbStatus.SelectedIndex = 0; 
+        }
+
+        private void FillFields(Book book)
+        {
+
+            txtId.Text = book.Id.ToString();
+            txtTitle.Text = book.Title;
+            txtPages.Text = book.Pages.ToString();
+            txtYear.Text = book.PublicationYear.ToString();
+            if (book.Authors != null)
+            {
+                for (int i = 0; i < clbAuthors.Items.Count; i++)
+                {
+                    var autorDaLista = (Author)clbAuthors.Items[i];
+                    if (book.Authors.Any(a => a.Id == autorDaLista.Id))
+                    {
+                        clbAuthors.SetItemChecked(i, true);
+                    }
+                }
+            }
+
+            // Selecionar Gêneros na Lista
+            if (book.Genres != null)
+            {
+                for (int i = 0; i < clbGenres.Items.Count; i++)
+                {
+                    var generoDaLista = (Genre)clbGenres.Items[i];
+                    if (book.Genres.Any(g => g.Id == generoDaLista.Id))
+                    {
+                        clbGenres.SetItemChecked(i, true);
+                    }
+                }
+            }
+            cbStatus.Enabled = false;
         }
 
         private void btnNewAuthor_Click(object sender, EventArgs e)

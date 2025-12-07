@@ -228,6 +228,7 @@
             Controls.Add(txtTitle);
             Name = "BookForm";
             Text = "Cadastrar Livro";
+            MdiChildActivate += btnNewAuthor_Click;
             Controls.SetChildIndex(saveBtn, 0);
             Controls.SetChildIndex(cancelBtn, 0);
             Controls.SetChildIndex(txtTitle, 0);

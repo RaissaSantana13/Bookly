@@ -48,6 +48,12 @@ namespace Bookly.App.Infra
             #region Service
             services.AddScoped<IBaseService<Author>, BaseService<Author>>();
             services.AddScoped<IBaseService<User>, BaseService<User>>();
+            services.AddScoped<IBaseService<Genre>, BaseService<Genre>>();
+            services.AddScoped<IBaseService<ReadingProcess>, BaseService<ReadingProcess>>();
+            services.AddScoped<IBaseService<ReadingSession>, BaseService<ReadingSession>>();
+            services.AddScoped<IBaseService<Book>, BaseService<Book>>();
+
+
             #endregion
 
             #region Forms
