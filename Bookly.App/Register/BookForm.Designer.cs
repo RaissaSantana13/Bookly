@@ -189,6 +189,7 @@
             btnNewAuthor.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnNewAuthor.Timer_Effect_1 = 5;
             btnNewAuthor.Timer_RGB = 300;
+            btnNewAuthor.Click += btnNewAuthor_Click;
             // 
             // txtId
             // 

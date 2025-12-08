@@ -34,7 +34,7 @@ namespace Bookly.App.Register
             LoadData();
         }
 
-        public BookForm(Book book) : this() 
+        public BookForm(Book book) : this()
         {
             IsEditMode = true;
             FillFields(book);
@@ -43,21 +43,22 @@ namespace Bookly.App.Register
         private void LoadData()
         {
             var genres = _genreService.Get<Genre>().ToList();
+            clbGenres.DataSource = null;
             clbGenres.DataSource = genres;
             clbGenres.DisplayMember = "Name";
             clbGenres.ValueMember = "Id";
 
-            
+
             var authors = _authorService.Get<Author>().OrderBy(a => a.Name).ToList();
             clbAuthors.DataSource = authors;
             clbAuthors.DisplayMember = "Name";
             clbAuthors.ValueMember = "Id";
 
-            
+
             cbStatus.Items.Clear();
-            cbStatus.Items.Add("Lendo");
-            cbStatus.Items.Add("Concluído");
-            cbStatus.SelectedIndex = 0; 
+            cbStatus.Items.Add("Reading");
+            cbStatus.Items.Add("Completed");
+            cbStatus.SelectedIndex = 0;
         }
 
         private void FillFields(Book book)
@@ -79,7 +80,6 @@ namespace Bookly.App.Register
                 }
             }
 
-            // Selecionar Gêneros na Lista
             if (book.Genres != null)
             {
                 for (int i = 0; i < clbGenres.Items.Count; i++)
@@ -99,7 +99,7 @@ namespace Bookly.App.Register
             var form = new AuthorForm(_authorService);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                LoadData(); 
+                LoadData();
                 var authors = (List<Author>)clbAuthors.DataSource;
                 var newAuthor = authors.OrderByDescending(a => a.Id).FirstOrDefault();
                 if (newAuthor != null)
@@ -121,10 +121,16 @@ namespace Bookly.App.Register
                 book.PublicationYear = year;
 
             book.Genres = new List<Genre>();
-            foreach (Genre item in clbGenres.CheckedItems) book.Genres.Add(item);
-
             book.Authors = new List<Author>();
-            foreach (Author item in clbAuthors.CheckedItems) book.Authors.Add(item);
+            foreach (Genre item in clbGenres.CheckedItems)
+            {
+                book.Genres.Add(item);
+            }
+
+            foreach (Author item in clbAuthors.CheckedItems)
+            {
+                book.Authors.Add(item);
+            }
         }
 
         protected override void Save()
@@ -133,7 +139,7 @@ namespace Bookly.App.Register
             {
                 if (UserSession.CurrentUser == null)
                 {
-                    MessageBox.Show("Você precisa estar logado para salvar um livro.");
+                    MessageBox.Show("You need to be logged in to save a book.");
                     return;
                 }
 
@@ -168,7 +174,7 @@ namespace Bookly.App.Register
                         StartDate = DateTime.Now
                     };
 
-                    if (cbStatus.Text == "Concluído")
+                    if (cbStatus.Text == "Completed")
                     {
                         readingProcess.PagesRead = book.Pages;
                         readingProcess.EndDate = DateTime.Now;
@@ -182,13 +188,13 @@ namespace Bookly.App.Register
                     _processService.Add<ReadingProcess, ReadingProcess, ReadingProcessValidator>(readingProcess);
                 }
 
-                MessageBox.Show("Livro salvo com sucesso!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Book saved successfully!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro: {ex.Message}", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -15,7 +15,13 @@ namespace Bookly.App
             // see https://aka.ms/applicationconfiguration.
             ConfigureDI.ConfigureServices();
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            InitialForm initialForm = new InitialForm();
+            if (initialForm.ShowDialog() == DialogResult.OK)
+            {
+                // 3. AGORA sim, iniciamos a aplicação principal com o MainForm
+                // Quando o MainForm fechar, a aplicação encerra.
+                Application.Run(new MainForm());
+            }
         }
     }
 }

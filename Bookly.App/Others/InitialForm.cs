@@ -2,15 +2,7 @@
 using Bookly.App.Register;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace Bookly.App.Others
 {
@@ -23,12 +15,17 @@ namespace Bookly.App.Others
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            ShowForm<RegisterUserForm>();
-            // ShowForm<AuthorForm>();
+            var form = ConfigureDI.serviceProvider!.GetService<RegisterUserForm>();
+            form.ShowDialog();
         }
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            ShowForm<LoginForm>();
+            var loginForm = ConfigureDI.serviceProvider!.GetService<LoginForm>();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void InitialForm_Load(object sender, EventArgs e)

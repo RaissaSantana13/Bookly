@@ -29,6 +29,8 @@ namespace Bookly.App.Register
                 FormToObject(user);
                 _userService.Add<User, User, UserValidator>(user);
                 ClearFields();
+                MessageBox.Show("Usuário registado com sucesso! Faça login para continuar.", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {
