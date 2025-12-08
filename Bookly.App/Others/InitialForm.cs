@@ -27,22 +27,5 @@ namespace Bookly.App.Others
                 this.Close();
             }
         }
-
-        private void InitialForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ShowForm<TFormulario>() where TFormulario : Form
-        {
-            var form = ConfigureDI.serviceProvider!.GetService<TFormulario>();
-
-            if (form != null && !form.IsDisposed)
-            {
-                this.Hide();
-                form.FormClosed += (s, args) => this.Close();
-                form.Show();
-            }
-        }
     }
 }

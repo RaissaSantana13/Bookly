@@ -111,9 +111,9 @@
             label2.Font = new Font("Trebuchet MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(31, 166);
             label2.Name = "label2";
-            label2.Size = new Size(91, 35);
+            label2.Size = new Size(132, 35);
             label2.TabIndex = 3;
-            label2.Text = "Senha";
+            label2.Text = "Password";
             // 
             // label1
             // 
@@ -181,7 +181,7 @@
             Controls.Add(hopeGroupBox1);
             HeaderColor = Color.FromArgb(126, 87, 194);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Image = Properties.Resources.bookly;
+            Image = null;
             Name = "LoginForm";
             Text = "Login";
             WindowState = FormWindowState.Maximized;

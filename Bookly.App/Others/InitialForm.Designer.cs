@@ -47,7 +47,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(164, 110, 217);
-            label1.Location = new Point(144, 240);
+            label1.Location = new Point(109, 240);
             label1.Name = "label1";
             label1.Size = new Size(233, 81);
             label1.TabIndex = 0;
@@ -59,11 +59,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(179, 229, 196);
-            label2.Location = new Point(144, 321);
+            label2.Location = new Point(73, 321);
             label2.Name = "label2";
-            label2.Size = new Size(418, 74);
+            label2.Size = new Size(315, 74);
             label2.TabIndex = 1;
-            label2.Text = "Transforme sua leitura em um \nhábito inspirador.";
+            label2.Text = "Turn your reading \r\ninto an inspiring habit.\r\n";
             // 
             // imageList1
             // 
@@ -152,7 +152,7 @@
             registerBtn.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             registerBtn.TabIndex = 6;
             registerBtn.Tag = "Cyber";
-            registerBtn.TextButton = "Registrar";
+            registerBtn.TextButton = "Register";
             registerBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             registerBtn.Timer_Effect_1 = 5;
             registerBtn.Timer_RGB = 300;
@@ -199,7 +199,6 @@
             Name = "InitialForm";
             Text = "Bookly";
             WindowState = FormWindowState.Maximized;
-            Load += InitialForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

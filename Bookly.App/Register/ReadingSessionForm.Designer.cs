@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             txtPagesRead = new ReaLTaiizor.Controls.HopeTextBox();
-            txtData = new ReaLTaiizor.Controls.HopeTextBox();
+            txtDate = new ReaLTaiizor.Controls.HopeTextBox();
             txtId = new ReaLTaiizor.Controls.HopeTextBox();
             SuspendLayout();
             // 
@@ -49,7 +49,7 @@
             txtPagesRead.BorderColorB = Color.FromArgb(220, 223, 230);
             txtPagesRead.Font = new Font("Segoe UI", 12F);
             txtPagesRead.ForeColor = Color.FromArgb(48, 49, 51);
-            txtPagesRead.Hint = "Numero de Paginas Lidas";
+            txtPagesRead.Hint = "Number of Pages Read";
             txtPagesRead.Location = new Point(26, 58);
             txtPagesRead.MaxLength = 32767;
             txtPagesRead.Multiline = false;
@@ -64,28 +64,28 @@
             txtPagesRead.TabStop = false;
             txtPagesRead.UseSystemPasswordChar = false;
             // 
-            // txtData
+            // txtDate
             // 
-            txtData.BackColor = Color.FromArgb(209, 186, 255);
-            txtData.BaseColor = Color.FromArgb(44, 55, 66);
-            txtData.BorderColorA = Color.FromArgb(64, 158, 255);
-            txtData.BorderColorB = Color.FromArgb(220, 223, 230);
-            txtData.Font = new Font("Segoe UI", 12F);
-            txtData.ForeColor = Color.FromArgb(48, 49, 51);
-            txtData.Hint = "Data";
-            txtData.Location = new Point(284, 58);
-            txtData.MaxLength = 32767;
-            txtData.Multiline = false;
-            txtData.Name = "txtData";
-            txtData.PasswordChar = '\0';
-            txtData.ScrollBars = ScrollBars.None;
-            txtData.SelectedText = "";
-            txtData.SelectionLength = 0;
-            txtData.SelectionStart = 0;
-            txtData.Size = new Size(148, 38);
-            txtData.TabIndex = 11;
-            txtData.TabStop = false;
-            txtData.UseSystemPasswordChar = false;
+            txtDate.BackColor = Color.FromArgb(209, 186, 255);
+            txtDate.BaseColor = Color.FromArgb(44, 55, 66);
+            txtDate.BorderColorA = Color.FromArgb(64, 158, 255);
+            txtDate.BorderColorB = Color.FromArgb(220, 223, 230);
+            txtDate.Font = new Font("Segoe UI", 12F);
+            txtDate.ForeColor = Color.FromArgb(48, 49, 51);
+            txtDate.Hint = "Date";
+            txtDate.Location = new Point(284, 58);
+            txtDate.MaxLength = 32767;
+            txtDate.Multiline = false;
+            txtDate.Name = "txtDate";
+            txtDate.PasswordChar = '\0';
+            txtDate.ScrollBars = ScrollBars.None;
+            txtDate.SelectedText = "";
+            txtDate.SelectionLength = 0;
+            txtDate.SelectionStart = 0;
+            txtDate.Size = new Size(148, 38);
+            txtDate.TabIndex = 11;
+            txtDate.TabStop = false;
+            txtDate.UseSystemPasswordChar = false;
             // 
             // txtId
             // 
@@ -116,14 +116,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(713, 183);
             Controls.Add(txtId);
-            Controls.Add(txtData);
+            Controls.Add(txtDate);
             Controls.Add(txtPagesRead);
             Name = "ReadingSessionForm";
             Text = "ReadingSessionForm";
             Controls.SetChildIndex(saveBtn, 0);
             Controls.SetChildIndex(cancelBtn, 0);
             Controls.SetChildIndex(txtPagesRead, 0);
-            Controls.SetChildIndex(txtData, 0);
+            Controls.SetChildIndex(txtDate, 0);
             Controls.SetChildIndex(txtId, 0);
             ResumeLayout(false);
         }
@@ -131,7 +131,7 @@
         #endregion
 
         private ReaLTaiizor.Controls.HopeTextBox txtPagesRead;
-        private ReaLTaiizor.Controls.HopeTextBox txtData;
+        private ReaLTaiizor.Controls.HopeTextBox txtDate;
         private ReaLTaiizor.Controls.HopeTextBox txtId;
     }
 }

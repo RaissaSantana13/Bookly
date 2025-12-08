@@ -36,14 +36,14 @@ namespace Bookly.Repository.Context
             modelBuilder.Entity<User>(new UserMap().Configure);
 
             modelBuilder.Entity<Genre>().HasData(
-                new Genre { Id = 1, Name = "Ficção Científica" },
+                new Genre { Id = 1, Name = "Science fiction" },
                 new Genre { Id = 2, Name = "Romance" },
-                new Genre { Id = 3, Name = "Fantasia" },
+                new Genre { Id = 3, Name = "Fantasy" },
                 new Genre { Id = 4, Name = "Terror" },
-                new Genre { Id = 5, Name = "Biografia" },
-                new Genre { Id = 6, Name = "História" },
-                new Genre { Id = 7, Name = "Autoajuda" },
-                new Genre { Id = 8, Name = "Técnico/Acadêmico" }
+                new Genre { Id = 5, Name = "Biography" },
+                new Genre { Id = 6, Name = "History" },
+                new Genre { Id = 7, Name = "Self-help" },
+                new Genre { Id = 8, Name = "Technical/Academic" }
     );
         }
     }

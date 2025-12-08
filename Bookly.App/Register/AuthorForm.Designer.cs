@@ -48,7 +48,7 @@
             txtName.BorderColorB = Color.FromArgb(220, 223, 230);
             txtName.Font = new Font("Segoe UI", 12F);
             txtName.ForeColor = Color.FromArgb(48, 49, 51);
-            txtName.Hint = "Nome";
+            txtName.Hint = "Name";
             txtName.Location = new Point(29, 64);
             txtName.MaxLength = 32767;
             txtName.Multiline = false;

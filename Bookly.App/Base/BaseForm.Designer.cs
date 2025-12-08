@@ -69,7 +69,7 @@
             saveBtn.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             saveBtn.TabIndex = 7;
             saveBtn.Tag = "Cyber";
-            saveBtn.TextButton = "Salvar";
+            saveBtn.TextButton = "Save";
             saveBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             saveBtn.Timer_Effect_1 = 5;
             saveBtn.Timer_RGB = 300;
@@ -112,7 +112,7 @@
             cancelBtn.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cancelBtn.TabIndex = 8;
             cancelBtn.Tag = "Cyber";
-            cancelBtn.TextButton = "Cancelar";
+            cancelBtn.TextButton = "Cancel";
             cancelBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cancelBtn.Timer_Effect_1 = 5;
             cancelBtn.Timer_RGB = 300;

@@ -149,7 +149,6 @@ namespace Bookly.App.Register
                 if (IsEditMode)
                 {
                     int id = int.Parse(txtId.Text);
-                    // Busca o livro usando o serviço atual
                     book = _bookService.GetById<Book>(id);
                 }
                 else
@@ -157,13 +156,8 @@ namespace Bookly.App.Register
                     book = new Book();
                     isNewBook = true;
                 }
-
-                // Preenche o objeto com os dados da tela (incluindo as listas de Autor/Gênero)
                 FormToObject(book);
 
-                // --- CORREÇÃO OBRIGATÓRIA ---
-                // Isso avisa ao Serviço que esses Autores/Gêneros JÁ EXISTEM no banco.
-                // Sem isso, o sistema tenta criar um novo "Machado de Assis" e dá erro.
                 if (book.Authors != null)
                 {
                     foreach (var author in book.Authors)
@@ -216,7 +210,6 @@ namespace Bookly.App.Register
             }
             catch (Exception ex)
             {
-                // Exibe o erro interno para sabermos a causa exata se falhar de novo
                 var msg = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
                 MessageBox.Show($"Error: {msg}", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

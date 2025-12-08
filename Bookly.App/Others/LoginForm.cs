@@ -27,18 +27,17 @@ namespace Bookly.App.Others
             User? user = GetUser(txtEmail.Text, txtPassword.Text);
             if (user == null)
             {
-                MessageBox.Show("Email e/ou senha inválida!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid email and/or password!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             else
             {
                 UserSession.CurrentUser = user;
-                MessageBox.Show($"Bem-vindo, {user.Name}!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Welcome, {user.Name}!", "Bookly", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
                 Close();
             }
         }
-
         private User? GetUser(string email, string password)
         {
 

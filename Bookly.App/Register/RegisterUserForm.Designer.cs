@@ -105,7 +105,7 @@ namespace Bookly.App.Register
             btnRegister.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnRegister.TabIndex = 12;
             btnRegister.Tag = "Cyber";
-            btnRegister.TextButton = "Registrar";
+            btnRegister.TextButton = "Register";
             btnRegister.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnRegister.Timer_Effect_1 = 5;
             btnRegister.Timer_RGB = 300;
@@ -176,9 +176,9 @@ namespace Bookly.App.Register
             label3.Font = new Font("Trebuchet MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(32, 31);
             label3.Name = "label3";
-            label3.Size = new Size(87, 35);
+            label3.Size = new Size(86, 35);
             label3.TabIndex = 10;
-            label3.Text = "Nome";
+            label3.Text = "Name";
             // 
             // label2
             // 
@@ -187,9 +187,9 @@ namespace Bookly.App.Register
             label2.Font = new Font("Trebuchet MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(36, 260);
             label2.Name = "label2";
-            label2.Size = new Size(91, 35);
+            label2.Size = new Size(132, 35);
             label2.TabIndex = 3;
-            label2.Text = "Senha";
+            label2.Text = "Password";
             // 
             // label1
             // 

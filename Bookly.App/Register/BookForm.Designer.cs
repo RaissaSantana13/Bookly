@@ -54,7 +54,7 @@
             txtTitle.BorderColorB = Color.FromArgb(220, 223, 230);
             txtTitle.Font = new Font("Segoe UI", 12F);
             txtTitle.ForeColor = Color.FromArgb(48, 49, 51);
-            txtTitle.Hint = "Titulo";
+            txtTitle.Hint = "Title";
             txtTitle.Location = new Point(31, 69);
             txtTitle.MaxLength = 32767;
             txtTitle.Multiline = false;
@@ -77,7 +77,7 @@
             txtYear.BorderColorB = Color.FromArgb(220, 223, 230);
             txtYear.Font = new Font("Segoe UI", 12F);
             txtYear.ForeColor = Color.FromArgb(48, 49, 51);
-            txtYear.Hint = "Ano";
+            txtYear.Hint = "Year";
             txtYear.Location = new Point(618, 69);
             txtYear.MaxLength = 32767;
             txtYear.Multiline = false;
@@ -100,7 +100,7 @@
             txtPages.BorderColorB = Color.FromArgb(220, 223, 230);
             txtPages.Font = new Font("Segoe UI", 12F);
             txtPages.ForeColor = Color.FromArgb(48, 49, 51);
-            txtPages.Hint = "Nº de Paginas";
+            txtPages.Hint = "Number of Pages";
             txtPages.Location = new Point(457, 69);
             txtPages.MaxLength = 32767;
             txtPages.Multiline = false;
@@ -110,7 +110,7 @@
             txtPages.SelectedText = "";
             txtPages.SelectionLength = 0;
             txtPages.SelectionStart = 0;
-            txtPages.Size = new Size(128, 38);
+            txtPages.Size = new Size(147, 38);
             txtPages.TabIndex = 11;
             txtPages.TabStop = false;
             txtPages.UseSystemPasswordChar = false;

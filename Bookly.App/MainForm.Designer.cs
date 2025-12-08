@@ -141,17 +141,17 @@
             // 
             // chTitle2
             // 
-            chTitle2.Text = "Titulo";
+            chTitle2.Text = "Title";
             chTitle2.Width = 500;
             // 
             // chAuthor2
             // 
-            chAuthor2.Text = "Autor";
+            chAuthor2.Text = "Author";
             chAuthor2.Width = 400;
             // 
             // chData
             // 
-            chData.Text = "Data de Conclusao";
+            chData.Text = "Completion date";
             chData.Width = 150;
             // 
             // grpInProgress
@@ -193,18 +193,18 @@
             // 
             // chTitle
             // 
-            chTitle.Text = "Titulo";
+            chTitle.Text = "Title";
             chTitle.Width = 500;
             // 
             // chAuthor
             // 
-            chAuthor.Text = "Autor";
+            chAuthor.Text = "Author";
             chAuthor.Width = 400;
             // 
             // chProgress
             // 
             chProgress.DisplayIndex = 3;
-            chProgress.Text = "Progresso";
+            chProgress.Text = "Progress";
             chProgress.Width = 100;
             // 
             // chPercentage
@@ -249,7 +249,7 @@
             btnExcluir.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnExcluir.TabIndex = 10;
             btnExcluir.Tag = "Cyber";
-            btnExcluir.TextButton = "Excluir";
+            btnExcluir.TextButton = "Delete";
             btnExcluir.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnExcluir.Timer_Effect_1 = 5;
             btnExcluir.Timer_RGB = 300;
@@ -292,7 +292,7 @@
             btnAdd.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnAdd.TabIndex = 8;
             btnAdd.Tag = "Cyber";
-            btnAdd.TextButton = "Adicionar";
+            btnAdd.TextButton = "To add";
             btnAdd.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnAdd.Timer_Effect_1 = 5;
             btnAdd.Timer_RGB = 300;
@@ -335,7 +335,7 @@
             btnReadingSession.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btnReadingSession.TabIndex = 7;
             btnReadingSession.Tag = "Cyber";
-            btnReadingSession.TextButton = "Registrar Sessão de Leitura";
+            btnReadingSession.TextButton = "Register Reading Session";
             btnReadingSession.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnReadingSession.Timer_Effect_1 = 5;
             btnReadingSession.Timer_RGB = 300;
@@ -348,9 +348,9 @@
             label3.ForeColor = Color.FromArgb(179, 229, 196);
             label3.Location = new Point(48, 371);
             label3.Name = "label3";
-            label3.Size = new Size(359, 49);
+            label3.Size = new Size(335, 49);
             label3.TabIndex = 2;
-            label3.Text = "Livros concluidos:";
+            label3.Text = "Complete books:";
             // 
             // label1
             // 
@@ -359,9 +359,9 @@
             label1.ForeColor = Color.FromArgb(179, 229, 196);
             label1.Location = new Point(48, 25);
             label1.Name = "label1";
-            label1.Size = new Size(265, 49);
+            label1.Size = new Size(274, 49);
             label1.TabIndex = 0;
-            label1.Text = "Lendo agora:";
+            label1.Text = "Reading now:";
             // 
             // tabPage3
             // 

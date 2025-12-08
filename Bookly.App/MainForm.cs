@@ -126,7 +126,7 @@ namespace Bookly.App
 
                 if (result == DialogResult.OK)
                 {
-                    
+                    PopulateLists();
                 }
             }
         }
@@ -158,14 +158,18 @@ namespace Bookly.App
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    
+                    PopulateLists();
                 }
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ShowForm<BookForm>();
+            var form = ConfigureDI.serviceProvider.GetService<BookForm>();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                PopulateLists();
+            }
         }
 
 
@@ -190,8 +194,8 @@ namespace Bookly.App
                 try
                 {
                     _readingProcessService.Delete(selectedProcess.Id);
-                   
                     MessageBox.Show("Book removed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    PopulateLists();
                 }
                 catch (Exception ex)
                 {
@@ -202,15 +206,6 @@ namespace Bookly.App
         }
 
         #endregion
-
-        private void ShowForm<TFormulario>() where TFormulario : Form
-        {
-            var cad = ConfigureDI.serviceProvider!.GetService<TFormulario>();
-            if (cad != null && !cad.IsDisposed)
-            {
-                cad.Show();
-            }
-        }
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
