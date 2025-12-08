@@ -40,14 +40,25 @@ namespace Bookly.App.Register
         {
             try
             {
-                if (!int.TryParse(txtPagesRead.Text, out int pagesReadToday)) { return; }
-                if (!DateTime.TryParse(txtDate.Text, out DateTime sessionDate)) {return; }
+                if (!int.TryParse(txtPagesRead.Text, out int pagesReadToday))
+                {
+                    MessageBox.Show("Invalid number of pages.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (!DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None,
+                    out DateTime sessionDate))
+                {
+                    MessageBox.Show("Invalid date! Please use the format dd/MM/yyyy (e.g., 25/12/2024).", "Date Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 int totalBookPages = _currentProcess.Book.Pages;
                 int alreadyReadPages = _currentProcess.PagesRead;
 
                 if (alreadyReadPages + pagesReadToday > totalBookPages)
                 {
-                    MessageBox.Show($"Error: This exceeds the total number of pages. ({totalBookPages}).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Error: This exceeds the total pages ({totalBookPages}).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 _currentProcess.PagesRead += pagesReadToday;

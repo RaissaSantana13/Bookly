@@ -10,7 +10,7 @@ namespace Bookly.Repository.Mapping
         {
             builder.ToTable("ReadingSession");
             builder.HasKey(prop => prop.Id);
-            builder.Property(prop => prop.Date).HasDefaultValueSql("CURRENT_TIMESTAMP").IsRequired();
+            builder.Property(prop => prop.Date).IsRequired();
             builder.Property(prop => prop.PagesReadToday).IsRequired();
             builder.HasOne(prop => prop.Book);
             builder.HasOne(prop => prop.User);

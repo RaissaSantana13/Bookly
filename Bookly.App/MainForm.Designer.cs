@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            tabClose = new ReaLTaiizor.Controls.AirTabPage();
-            tabPage1 = new TabPage();
+            tabPageMain = new ReaLTaiizor.Controls.AirTabPage();
+            tabHome = new TabPage();
             hopeGroupBox4 = new ReaLTaiizor.Controls.HopeGroupBox();
             plotDaysMonth = new ScottPlot.WinForms.FormsPlot();
             label7 = new Label();
@@ -54,7 +54,7 @@
             cyberButton1 = new ReaLTaiizor.Controls.CyberButton();
             cyberButton3 = new ReaLTaiizor.Controls.CyberButton();
             label2 = new Label();
-            tbLibary = new TabPage();
+            tabLibary = new TabPage();
             grpCompleted = new ReaLTaiizor.Controls.HopeGroupBox();
             lstCompleted = new ReaLTaiizor.Controls.PoisonListView();
             chTitle2 = new ColumnHeader();
@@ -71,62 +71,62 @@
             btnReadingSession = new ReaLTaiizor.Controls.CyberButton();
             label3 = new Label();
             label1 = new Label();
-            tabPage3 = new TabPage();
+            tabClose = new TabPage();
             imageList2 = new ImageList(components);
             imageList1 = new ImageList(components);
-            tabClose.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tabPageMain.SuspendLayout();
+            tabHome.SuspendLayout();
             hopeGroupBox4.SuspendLayout();
             hopeGroupBox3.SuspendLayout();
             hopeGroupBox2.SuspendLayout();
             hopeGroupBox1.SuspendLayout();
-            tbLibary.SuspendLayout();
+            tabLibary.SuspendLayout();
             grpCompleted.SuspendLayout();
             grpInProgress.SuspendLayout();
             SuspendLayout();
             // 
-            // tabClose
+            // tabPageMain
             // 
-            tabClose.Alignment = TabAlignment.Left;
-            tabClose.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabClose.BaseColor = Color.FromArgb(126, 87, 194);
-            tabClose.Controls.Add(tabPage1);
-            tabClose.Controls.Add(tbLibary);
-            tabClose.Controls.Add(tabPage3);
-            tabClose.ImageList = imageList2;
-            tabClose.ItemSize = new Size(50, 85);
-            tabClose.Location = new Point(1, 33);
-            tabClose.Multiline = true;
-            tabClose.Name = "tabClose";
-            tabClose.NormalTextColor = Color.DimGray;
-            tabClose.SelectedIndex = 0;
-            tabClose.SelectedTabBackColor = Color.FromArgb(30, 30, 38);
-            tabClose.SelectedTextColor = Color.Black;
-            tabClose.ShowOuterBorders = false;
-            tabClose.Size = new Size(1365, 737);
-            tabClose.SizeMode = TabSizeMode.Fixed;
-            tabClose.SquareColor = Color.FromArgb(179, 229, 196);
-            tabClose.TabCursor = Cursors.Hand;
-            tabClose.TabIndex = 0;
-            tabClose.Click += tabClose_Click;
+            tabPageMain.Alignment = TabAlignment.Left;
+            tabPageMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabPageMain.BaseColor = Color.FromArgb(126, 87, 194);
+            tabPageMain.Controls.Add(tabHome);
+            tabPageMain.Controls.Add(tabLibary);
+            tabPageMain.Controls.Add(tabClose);
+            tabPageMain.ImageList = imageList2;
+            tabPageMain.ItemSize = new Size(50, 85);
+            tabPageMain.Location = new Point(1, 33);
+            tabPageMain.Multiline = true;
+            tabPageMain.Name = "tabPageMain";
+            tabPageMain.NormalTextColor = Color.DimGray;
+            tabPageMain.SelectedIndex = 0;
+            tabPageMain.SelectedTabBackColor = Color.FromArgb(30, 30, 38);
+            tabPageMain.SelectedTextColor = Color.Black;
+            tabPageMain.ShowOuterBorders = false;
+            tabPageMain.Size = new Size(1365, 737);
+            tabPageMain.SizeMode = TabSizeMode.Fixed;
+            tabPageMain.SquareColor = Color.FromArgb(179, 229, 196);
+            tabPageMain.TabCursor = Cursors.Hand;
+            tabPageMain.TabIndex = 0;
+            tabPageMain.SelectedIndexChanged += tabPageMain_Click;
             // 
-            // tabPage1
+            // tabHome
             // 
-            tabPage1.AutoScroll = true;
-            tabPage1.AutoScrollMargin = new Size(10, 10);
-            tabPage1.AutoScrollMinSize = new Size(10, 10);
-            tabPage1.BackColor = Color.FromArgb(30, 30, 38);
-            tabPage1.Controls.Add(hopeGroupBox4);
-            tabPage1.Controls.Add(hopeGroupBox3);
-            tabPage1.Controls.Add(hopeGroupBox2);
-            tabPage1.Controls.Add(hopeGroupBox1);
-            tabPage1.Controls.Add(label2);
-            tabPage1.ImageIndex = 2;
-            tabPage1.Location = new Point(89, 4);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1272, 729);
-            tabPage1.TabIndex = 0;
+            tabHome.AutoScroll = true;
+            tabHome.AutoScrollMargin = new Size(10, 10);
+            tabHome.AutoScrollMinSize = new Size(10, 10);
+            tabHome.BackColor = Color.FromArgb(30, 30, 38);
+            tabHome.Controls.Add(hopeGroupBox4);
+            tabHome.Controls.Add(hopeGroupBox3);
+            tabHome.Controls.Add(hopeGroupBox2);
+            tabHome.Controls.Add(hopeGroupBox1);
+            tabHome.Controls.Add(label2);
+            tabHome.ImageIndex = 2;
+            tabHome.Location = new Point(89, 4);
+            tabHome.Name = "tabHome";
+            tabHome.Padding = new Padding(3);
+            tabHome.Size = new Size(1272, 729);
+            tabHome.TabIndex = 0;
             // 
             // hopeGroupBox4
             // 
@@ -659,19 +659,19 @@
             label2.TabIndex = 1;
             label2.Text = "Welcome!";
             // 
-            // tbLibary
+            // tabLibary
             // 
-            tbLibary.BackColor = Color.FromArgb(30, 30, 38);
-            tbLibary.Controls.Add(grpCompleted);
-            tbLibary.Controls.Add(grpInProgress);
-            tbLibary.Controls.Add(label3);
-            tbLibary.Controls.Add(label1);
-            tbLibary.ImageIndex = 0;
-            tbLibary.Location = new Point(89, 4);
-            tbLibary.Name = "tbLibary";
-            tbLibary.Padding = new Padding(3);
-            tbLibary.Size = new Size(1272, 729);
-            tbLibary.TabIndex = 1;
+            tabLibary.BackColor = Color.FromArgb(30, 30, 38);
+            tabLibary.Controls.Add(grpCompleted);
+            tabLibary.Controls.Add(grpInProgress);
+            tabLibary.Controls.Add(label3);
+            tabLibary.Controls.Add(label1);
+            tabLibary.ImageIndex = 0;
+            tabLibary.Location = new Point(89, 4);
+            tabLibary.Name = "tabLibary";
+            tabLibary.Padding = new Padding(3);
+            tabLibary.Size = new Size(1272, 729);
+            tabLibary.TabIndex = 1;
             // 
             // grpCompleted
             // 
@@ -935,15 +935,15 @@
             label1.TabIndex = 0;
             label1.Text = "Reading now:";
             // 
-            // tabPage3
+            // tabClose
             // 
-            tabPage3.BackColor = Color.FromArgb(30, 30, 38);
-            tabPage3.ImageIndex = 1;
-            tabPage3.Location = new Point(89, 4);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1272, 729);
-            tabPage3.TabIndex = 2;
+            tabClose.BackColor = Color.FromArgb(30, 30, 38);
+            tabClose.ImageIndex = 1;
+            tabClose.Location = new Point(89, 4);
+            tabClose.Name = "tabClose";
+            tabClose.Padding = new Padding(3);
+            tabClose.Size = new Size(1272, 729);
+            tabClose.TabIndex = 2;
             // 
             // imageList2
             // 
@@ -967,16 +967,16 @@
             BackColor = Color.FromArgb(30, 30, 38);
             BorderColor = Color.DarkSlateBlue;
             ClientSize = new Size(1366, 768);
-            Controls.Add(tabClose);
+            Controls.Add(tabPageMain);
             HeaderColor = Color.FromArgb(126, 87, 194);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Image = null;
             Name = "MainForm";
             Text = "Bookly";
             WindowState = FormWindowState.Maximized;
-            tabClose.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
+            tabPageMain.ResumeLayout(false);
+            tabHome.ResumeLayout(false);
+            tabHome.PerformLayout();
             hopeGroupBox4.ResumeLayout(false);
             hopeGroupBox4.PerformLayout();
             hopeGroupBox3.ResumeLayout(false);
@@ -985,20 +985,20 @@
             hopeGroupBox2.PerformLayout();
             hopeGroupBox1.ResumeLayout(false);
             hopeGroupBox1.PerformLayout();
-            tbLibary.ResumeLayout(false);
-            tbLibary.PerformLayout();
+            tabLibary.ResumeLayout(false);
+            tabLibary.PerformLayout();
             grpCompleted.ResumeLayout(false);
             grpInProgress.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private ReaLTaiizor.Controls.AirTabPage tabClose;
-        private TabPage tabPage1;
-        private TabPage tbLibary;
+        private ReaLTaiizor.Controls.AirTabPage tabPageMain;
+        private TabPage tabHome;
+        private TabPage tabLibary;
         private ImageList imageList2;
         private ImageList imageList1;
-        private TabPage tabPage3;
+        private TabPage tabClose;
         private Label label1;
         private Label label3;
         private ReaLTaiizor.Controls.HopeGroupBox grpCompleted;

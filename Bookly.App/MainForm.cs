@@ -329,9 +329,16 @@ namespace Bookly.App
         #endregion
 
         #region Close
-        private void tabClose_Click(object sender, EventArgs e)
+        private void tabPageMain_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (tabPageMain.SelectedTab == tabHome)
+            {
+                PopulateLists(); 
+            }
+            if (tabPageMain.SelectedTab == tabClose)
+            {
+                this.Close();
+            }
         }
         #endregion
     }
