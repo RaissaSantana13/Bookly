@@ -29,7 +29,7 @@ namespace Bookly.App
                 .Where(p => p.ReadingSessions != null)
                 .SelectMany(p => p.ReadingSessions)
                 .Select(s => s.Date.Date)
-                .Distinct() 
+                .Distinct()
                 .OrderByDescending(d => d)
                 .ToList();
 
@@ -46,7 +46,7 @@ namespace Bookly.App
             var readingDates = allProcesses
                 .Where(p => p.ReadingSessions != null)
                 .SelectMany(p => p.ReadingSessions)
-                .Select(s => s.Date.Date) 
+                .Select(s => s.Date.Date)
                 .Distinct()
                 .ToList();
             foreach (var date in readingDates)
@@ -109,7 +109,7 @@ namespace Bookly.App
                 if (readThisWeek)
                 {
                     streakWeeks++;
-                    currentCheck = currentCheck.AddDays(-7); 
+                    currentCheck = currentCheck.AddDays(-7);
                 }
                 else
                 {
@@ -207,7 +207,7 @@ namespace Bookly.App
             item.SubItems.Add(dateText);
 
             item.ForeColor = Color.DimGray;
-            item.Tag = process; 
+            item.Tag = process;
             return item;
         }
 
@@ -223,7 +223,7 @@ namespace Bookly.App
             item.SubItems.Add($"{percentage}%");
 
             item.ForeColor = Color.Black;
-            item.Tag = process; 
+            item.Tag = process;
             return item;
         }
 
@@ -315,6 +315,22 @@ namespace Bookly.App
             }
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            var selectedProcess = GetSelectedProcess();
+            if (selectedProcess == null)
+            {
+                MessageBox.Show("Please select a book from the list to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            using (var form = new BookForm(selectedProcess.Book))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    PopulateLists();
+                }
+            }
+        }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -355,7 +371,7 @@ namespace Bookly.App
         {
             if (tabPageMain.SelectedTab == tabHome)
             {
-                PopulateLists(); 
+                PopulateLists();
             }
             if (tabPageMain.SelectedTab == tabClose)
             {
@@ -364,5 +380,6 @@ namespace Bookly.App
             }
         }
         #endregion
+
     }
 }
