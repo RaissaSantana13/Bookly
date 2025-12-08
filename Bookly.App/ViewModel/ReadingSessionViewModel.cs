@@ -1,9 +1,4 @@
 ﻿using Bookly.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Bookly.App.ViewModel
 {
@@ -12,6 +7,13 @@ namespace Bookly.App.ViewModel
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int PagesReadToday { get; set; }
+
+        // --- Adicione os IDs aqui também ---
+        public int UserId { get; set; }
+        public int BookId { get; set; }
+        public int ReadingProcessId { get; set; }
+
+        // Pode manter null na hora de salvar, o AutoMapper vai ignorar se o ID estiver preenchido
         public User User { get; set; }
         public Book Book { get; set; }
         public ReadingProcess ReadingProcess { get; set; }
