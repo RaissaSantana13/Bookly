@@ -47,7 +47,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Trebuchet MS", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(164, 110, 217);
-            label1.Location = new Point(109, 240);
+            label1.Location = new Point(148, 240);
             label1.Name = "label1";
             label1.Size = new Size(233, 81);
             label1.TabIndex = 0;
@@ -59,7 +59,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Trebuchet MS", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(179, 229, 196);
-            label2.Location = new Point(73, 321);
+            label2.Location = new Point(109, 321);
             label2.Name = "label2";
             label2.Size = new Size(315, 74);
             label2.TabIndex = 1;
@@ -143,7 +143,7 @@
             registerBtn.Lighting = false;
             registerBtn.LinearGradient_Background = false;
             registerBtn.LinearGradientPen = false;
-            registerBtn.Location = new Point(160, 431);
+            registerBtn.Location = new Point(185, 428);
             registerBtn.Name = "registerBtn";
             registerBtn.PenWidth = 15;
             registerBtn.Rounding = true;
