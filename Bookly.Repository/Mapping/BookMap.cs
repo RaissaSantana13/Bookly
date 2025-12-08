@@ -20,10 +20,6 @@ namespace Bookly.Repository.Mapping
                 .HasColumnType("varchar(100)");
             builder.Property(prop => prop.PublicationYear).IsRequired();
             builder.Property(prop => prop.Pages).IsRequired();
-            builder.Property(prop => prop.Synopsys)
-                .HasColumnType("varchar(500)");
-            builder.Property(prop => prop.Cover)
-                .HasColumnType("varchar(500)");
             builder.HasMany(prop => prop.Authors).WithMany(prop => prop.Books).UsingEntity("AuthorBook");
             builder.HasMany(prop => prop.Genres).WithMany(prop => prop.Books).UsingEntity("GenreBook");
         }

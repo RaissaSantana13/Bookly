@@ -57,7 +57,6 @@ namespace Bookly.App.Infra
             #endregion
 
             #region Forms
-            //services.AddTransistent<CategoryForm, CategoryForm>();
             services.AddScoped<RegisterUserForm, RegisterUserForm>();
             services.AddScoped<AuthorForm, AuthorForm>();
             services.AddScoped<BookForm, BookForm>();

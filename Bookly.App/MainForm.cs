@@ -29,7 +29,7 @@ namespace Bookly.App
             foreach (var process in processes)
             {
                 string authorName = GetAuthorName(process);
-                bool isCompleted = process.Status == "Concluído" || process.Status == "Completed";
+                bool isCompleted = process.Status == "Completed" || process.Status == "Completed";
 
                 if (isCompleted)
                 {
