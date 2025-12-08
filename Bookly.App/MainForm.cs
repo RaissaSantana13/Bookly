@@ -42,18 +42,13 @@ namespace Bookly.App
 
         private void UpdateKryptonCalendar(List<ReadingProcessViewModel> allProcesses)
         {
-            // 1. Limpa marcações antigas
             kryptonMonthCalendar1.RemoveAllBoldedDates();
-
-            // 2. Filtra todas as datas únicas que tiveram sessão de leitura
             var readingDates = allProcesses
                 .Where(p => p.ReadingSessions != null)
                 .SelectMany(p => p.ReadingSessions)
-                .Select(s => s.Date.Date) // Remove a hora, pega só a data
+                .Select(s => s.Date.Date) 
                 .Distinct()
                 .ToList();
-
-            // 3. Adiciona essas datas à lista de "Negrito" (que configuramos como Roxo)
             foreach (var date in readingDates)
             {
                 kryptonMonthCalendar1.AddBoldedDate(date);

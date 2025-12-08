@@ -34,18 +34,18 @@ namespace Bookly.App.Register
             {
                 if (_currentProcess.User == null)
                 {
-                    MessageBox.Show("Erro crítico: Dados do usuário não foram carregados. Reinicie a aplicação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Critical error: User data could not be loaded. Restart the application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (!int.TryParse(txtPagesRead.Text, out int pagesReadToday))
                 {
-                    MessageBox.Show("Número de páginas inválido.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Invalid number of pages.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 if (!DateTime.TryParse(txtDate.Text, out DateTime sessionDate))
                 {
-                    MessageBox.Show("Data inválida. Use o formato AAAA-MM-DD ou DD/MM/AAAA.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Invalid date. Use the format YYYY-MM-DD or DD/MM/YYYY.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -54,7 +54,7 @@ namespace Bookly.App.Register
 
                 if (alreadyReadPages + pagesReadToday > totalBookPages)
                 {
-                    MessageBox.Show($"Erro: Ultrapassa o total de páginas ({totalBookPages}).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Error: Exceeds total number of pages. ({totalBookPages}).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -64,7 +64,7 @@ namespace Bookly.App.Register
                 {
                     _currentProcess.Status = "Completed";
                     _currentProcess.EndDate = sessionDate;
-                    MessageBox.Show("Parabéns! Livro concluído.", "Concluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Congratulations! Book completed.", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 var newSession = new ReadingSessionViewModel
@@ -82,14 +82,14 @@ namespace Bookly.App.Register
                 _readingSessionService.Add<ReadingSessionViewModel, ReadingSessionViewModel, ReadingSessionValidator>(newSession);
                 _readingProcessService.Update<ReadingProcessViewModel, ReadingProcessViewModel, ReadingProcessValidator>(_currentProcess);
 
-                MessageBox.Show("Sessão registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Session successfully registered!!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao salvar: {ex.Message}\n{ex.InnerException?.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error when saving: {ex.Message}\n{ex.InnerException?.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
