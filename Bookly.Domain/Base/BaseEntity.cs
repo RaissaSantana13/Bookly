@@ -10,7 +10,7 @@ namespace Bookly.Domain.Base
 
         protected BaseEntity(TID Id)
         {
-            Id = Id; 
+            this.Id = Id; 
         }
 
         public TID? Id {  get; set; }

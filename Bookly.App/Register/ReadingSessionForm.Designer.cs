@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadingSessionForm));
             txtPagesRead = new ReaLTaiizor.Controls.HopeTextBox();
             txtDate = new ReaLTaiizor.Controls.HopeTextBox();
             txtId = new ReaLTaiizor.Controls.HopeTextBox();
@@ -118,6 +119,7 @@
             Controls.Add(txtId);
             Controls.Add(txtDate);
             Controls.Add(txtPagesRead);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "ReadingSessionForm";
             Text = "ReadingSessionForm";
             Controls.SetChildIndex(saveBtn, 0);

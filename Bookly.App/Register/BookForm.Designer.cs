@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookForm));
             txtTitle = new ReaLTaiizor.Controls.HopeTextBox();
             txtYear = new ReaLTaiizor.Controls.HopeTextBox();
             txtPages = new ReaLTaiizor.Controls.HopeTextBox();
@@ -227,6 +228,7 @@
             Controls.Add(txtPages);
             Controls.Add(txtYear);
             Controls.Add(txtTitle);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "BookForm";
             Text = "Cadastrar Livro";
             MdiChildActivate += btnNewAuthor_Click;

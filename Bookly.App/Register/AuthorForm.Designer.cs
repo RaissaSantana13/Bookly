@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AuthorForm));
             txtName = new ReaLTaiizor.Controls.HopeTextBox();
             txtId = new ReaLTaiizor.Controls.HopeTextBox();
             SuspendLayout();
@@ -93,6 +94,7 @@
             ClientSize = new Size(763, 204);
             Controls.Add(txtId);
             Controls.Add(txtName);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AuthorForm";
             Text = "Registrar Autor";
             Controls.SetChildIndex(saveBtn, 0);

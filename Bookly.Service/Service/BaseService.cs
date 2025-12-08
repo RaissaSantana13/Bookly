@@ -32,7 +32,7 @@ namespace Bookly.Service.Service
         private void Validate(TEntity obj, AbstractValidator<TEntity> validator)
         {
             if (obj == null)
-                throw new Exception("Objeto nulo!");
+                throw new Exception("Null object!");
             validator.ValidateAndThrow(obj);
         }
 
@@ -60,14 +60,21 @@ namespace Bookly.Service.Service
         }
 
         public TOutputModel Update<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
-            where TInputModel : class
-            where TOutputModel : class
-            where TValidator : AbstractValidator<TEntity>
+         where TInputModel : class
+         where TOutputModel : class
+         where TValidator : AbstractValidator<TEntity>
         {
-            var entity = _mapper.Map<TEntity>(inputModel);
-            Validate(entity, Activator.CreateInstance<TValidator>());
-            _baseRepository.Update(entity);
-            var outputModel = _mapper.Map<TOutputModel>(entity);
+            var tempEntity = _mapper.Map<TEntity>(inputModel);
+            Validate(tempEntity, Activator.CreateInstance<TValidator>());
+            var id = ((BaseEntity<int>)(object)tempEntity).Id;
+            var existingEntity = _baseRepository.Select(id);
+            if (existingEntity == null)
+            {
+                throw new Exception($"Record not found for update. (ID: {id}).");
+            }
+            _mapper.Map(inputModel, existingEntity);
+            _baseRepository.Update(existingEntity);
+            var outputModel = _mapper.Map<TOutputModel>(existingEntity);
             return outputModel;
         }
     }

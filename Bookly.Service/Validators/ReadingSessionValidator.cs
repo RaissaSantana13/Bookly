@@ -8,15 +8,18 @@ namespace Bookly.Service.Validators
         public ReadingSessionValidator()
         {
             RuleFor(c => c.Date)
-                .NotEmpty().WithMessage("The the of the session is required!");
+                 .NotEmpty().WithMessage("The date of the session is required!");
+
             RuleFor(c => c.PagesReadToday)
-                .NotEmpty().WithMessage("The nunber of the pages read today is required!");
-            RuleFor(c => c.Book)
-                .NotEmpty().WithMessage("The book of the Reading Session is required!");
-            RuleFor(c => c.User)
-                .NotEmpty().WithMessage("The user of the Reading Session is required!");
-            RuleFor(c => c.ReadingProcess)
-                .NotEmpty().WithMessage("The reading process of the Reading Session is required!");
+                .NotEmpty().WithMessage("The number of pages read today is required!"); 
+            RuleFor(c => c.BookId)
+                .NotEmpty().WithMessage("The book ID is required!");
+
+            RuleFor(c => c.UserId)
+                .NotEmpty().WithMessage("The user ID is required!");
+
+            RuleFor(c => c.ReadingProcessId)
+                .NotEmpty().WithMessage("The reading process ID is required!");
         }
     }
 }

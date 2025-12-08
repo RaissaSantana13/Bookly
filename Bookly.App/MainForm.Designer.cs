@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            airTabPage1 = new ReaLTaiizor.Controls.AirTabPage();
+            tabClose = new ReaLTaiizor.Controls.AirTabPage();
             tabPage1 = new TabPage();
             tbLibary = new TabPage();
             grpCompleted = new ReaLTaiizor.Controls.HopeGroupBox();
@@ -52,35 +52,36 @@
             tabPage3 = new TabPage();
             imageList2 = new ImageList(components);
             imageList1 = new ImageList(components);
-            airTabPage1.SuspendLayout();
+            tabClose.SuspendLayout();
             tbLibary.SuspendLayout();
             grpCompleted.SuspendLayout();
             grpInProgress.SuspendLayout();
             SuspendLayout();
             // 
-            // airTabPage1
+            // tabClose
             // 
-            airTabPage1.Alignment = TabAlignment.Left;
-            airTabPage1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            airTabPage1.BaseColor = Color.FromArgb(126, 87, 194);
-            airTabPage1.Controls.Add(tabPage1);
-            airTabPage1.Controls.Add(tbLibary);
-            airTabPage1.Controls.Add(tabPage3);
-            airTabPage1.ImageList = imageList2;
-            airTabPage1.ItemSize = new Size(50, 85);
-            airTabPage1.Location = new Point(1, 33);
-            airTabPage1.Multiline = true;
-            airTabPage1.Name = "airTabPage1";
-            airTabPage1.NormalTextColor = Color.DimGray;
-            airTabPage1.SelectedIndex = 0;
-            airTabPage1.SelectedTabBackColor = Color.FromArgb(30, 30, 38);
-            airTabPage1.SelectedTextColor = Color.Black;
-            airTabPage1.ShowOuterBorders = false;
-            airTabPage1.Size = new Size(1365, 737);
-            airTabPage1.SizeMode = TabSizeMode.Fixed;
-            airTabPage1.SquareColor = Color.FromArgb(179, 229, 196);
-            airTabPage1.TabCursor = Cursors.Hand;
-            airTabPage1.TabIndex = 0;
+            tabClose.Alignment = TabAlignment.Left;
+            tabClose.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabClose.BaseColor = Color.FromArgb(126, 87, 194);
+            tabClose.Controls.Add(tabPage1);
+            tabClose.Controls.Add(tbLibary);
+            tabClose.Controls.Add(tabPage3);
+            tabClose.ImageList = imageList2;
+            tabClose.ItemSize = new Size(50, 85);
+            tabClose.Location = new Point(1, 33);
+            tabClose.Multiline = true;
+            tabClose.Name = "tabClose";
+            tabClose.NormalTextColor = Color.DimGray;
+            tabClose.SelectedIndex = 0;
+            tabClose.SelectedTabBackColor = Color.FromArgb(30, 30, 38);
+            tabClose.SelectedTextColor = Color.Black;
+            tabClose.ShowOuterBorders = false;
+            tabClose.Size = new Size(1365, 737);
+            tabClose.SizeMode = TabSizeMode.Fixed;
+            tabClose.SquareColor = Color.FromArgb(179, 229, 196);
+            tabClose.TabCursor = Cursors.Hand;
+            tabClose.TabIndex = 0;
+            tabClose.Click += tabClose_Click;
             // 
             // tabPage1
             // 
@@ -108,11 +109,11 @@
             // 
             // grpCompleted
             // 
-            grpCompleted.BackColor = Color.FromArgb(156, 133, 195);
+            grpCompleted.BackColor = Color.FromArgb(209, 186, 255);
             grpCompleted.BorderColor = Color.FromArgb(220, 223, 230);
             grpCompleted.Controls.Add(lstCompleted);
             grpCompleted.Font = new Font("Segoe UI", 12F);
-            grpCompleted.ForeColor = Color.FromArgb(48, 49, 51);
+            grpCompleted.ForeColor = Color.Black;
             grpCompleted.LineColor = Color.FromArgb(220, 223, 230);
             grpCompleted.Location = new Point(48, 439);
             grpCompleted.Name = "grpCompleted";
@@ -125,7 +126,7 @@
             // 
             // lstCompleted
             // 
-            lstCompleted.BackColor = Color.FromArgb(156, 133, 195);
+            lstCompleted.BackColor = Color.FromArgb(209, 186, 255);
             lstCompleted.Columns.AddRange(new ColumnHeader[] { chTitle2, chAuthor2, chData });
             lstCompleted.Font = new Font("Segoe UI", 12F);
             lstCompleted.FullRowSelect = true;
@@ -134,8 +135,10 @@
             lstCompleted.Name = "lstCompleted";
             lstCompleted.OwnerDraw = true;
             lstCompleted.Size = new Size(1055, 219);
+            lstCompleted.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Purple;
             lstCompleted.TabIndex = 12;
             lstCompleted.UseCompatibleStateImageBehavior = false;
+            lstCompleted.UseCustomForeColor = true;
             lstCompleted.UseSelectable = true;
             lstCompleted.View = View.Details;
             // 
@@ -156,14 +159,14 @@
             // 
             // grpInProgress
             // 
-            grpInProgress.BackColor = Color.FromArgb(156, 133, 195);
-            grpInProgress.BorderColor = Color.FromArgb(220, 223, 230);
+            grpInProgress.BackColor = Color.White;
+            grpInProgress.BorderColor = Color.FromArgb(209, 186, 255);
             grpInProgress.Controls.Add(lstInProgress);
             grpInProgress.Controls.Add(btnExcluir);
             grpInProgress.Controls.Add(btnAdd);
             grpInProgress.Controls.Add(btnReadingSession);
             grpInProgress.Font = new Font("Segoe UI", 12F);
-            grpInProgress.ForeColor = Color.FromArgb(48, 49, 51);
+            grpInProgress.ForeColor = Color.Black;
             grpInProgress.LineColor = Color.FromArgb(220, 223, 230);
             grpInProgress.Location = new Point(48, 88);
             grpInProgress.Name = "grpInProgress";
@@ -176,18 +179,21 @@
             // 
             // lstInProgress
             // 
-            lstInProgress.BackColor = Color.FromArgb(156, 133, 195);
+            lstInProgress.BackColor = Color.FromArgb(209, 186, 255);
             lstInProgress.Columns.AddRange(new ColumnHeader[] { chTitle, chAuthor, chProgress, chPercentage });
             lstInProgress.Font = new Font("Segoe UI", 12F);
+            lstInProgress.ForeColor = SystemColors.InactiveCaptionText;
             lstInProgress.FullRowSelect = true;
             lstInProgress.HideSelection = true;
             lstInProgress.Location = new Point(20, 15);
             lstInProgress.Name = "lstInProgress";
             lstInProgress.OwnerDraw = true;
             lstInProgress.Size = new Size(1055, 198);
+            lstInProgress.Style = ReaLTaiizor.Enum.Poison.ColorStyle.Purple;
             lstInProgress.TabIndex = 11;
-            lstInProgress.Theme = ReaLTaiizor.Enum.Poison.ThemeStyle.Dark;
             lstInProgress.UseCompatibleStateImageBehavior = false;
+            lstInProgress.UseCustomBackColor = true;
+            lstInProgress.UseCustomForeColor = true;
             lstInProgress.UseSelectable = true;
             lstInProgress.View = View.Details;
             // 
@@ -346,7 +352,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Trebuchet MS", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(179, 229, 196);
-            label3.Location = new Point(48, 371);
+            label3.Location = new Point(48, 387);
             label3.Name = "label3";
             label3.Size = new Size(335, 49);
             label3.TabIndex = 2;
@@ -372,7 +378,7 @@
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(1272, 729);
             tabPage3.TabIndex = 2;
-            tabPage3.Click += tabPage3_Click;
+            tabPage3.Click += tabClose_Click;
             // 
             // imageList2
             // 
@@ -396,13 +402,14 @@
             BackColor = Color.FromArgb(30, 30, 38);
             BorderColor = Color.DarkSlateBlue;
             ClientSize = new Size(1366, 768);
-            Controls.Add(airTabPage1);
+            Controls.Add(tabClose);
             HeaderColor = Color.FromArgb(126, 87, 194);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Image = null;
             Name = "MainForm";
             Text = "Bookly";
             WindowState = FormWindowState.Maximized;
-            airTabPage1.ResumeLayout(false);
+            tabClose.ResumeLayout(false);
             tbLibary.ResumeLayout(false);
             tbLibary.PerformLayout();
             grpCompleted.ResumeLayout(false);
@@ -411,7 +418,7 @@
         }
 
         #endregion
-        private ReaLTaiizor.Controls.AirTabPage airTabPage1;
+        private ReaLTaiizor.Controls.AirTabPage tabClose;
         private TabPage tabPage1;
         private TabPage tbLibary;
         private ImageList imageList2;

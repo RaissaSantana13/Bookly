@@ -75,6 +75,11 @@ namespace Bookly.App.Infra
                         config.CreateMap<ReadingSession, ReadingSessionViewModel>();
                         config.CreateMap<Genre, GenreViewModel>();
                         config.CreateMap<ReadingProcess, ReadingProcessViewModel>();
+
+                        config.CreateMap<ReadingSession, ReadingSessionViewModel>().ReverseMap();
+
+                        config.CreateMap<Genre, GenreViewModel>().ReverseMap();
+                        config.CreateMap<ReadingProcess, ReadingProcessViewModel>().ReverseMap();
                     },
                     NullLoggerFactory.Instance).CreateMapper()
                 );
