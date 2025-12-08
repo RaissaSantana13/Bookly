@@ -216,7 +216,7 @@ namespace Bookly.App.Register
             txtPassword.Size = new Size(293, 41);
             txtPassword.TabIndex = 1;
             txtPassword.TextAlignment = HorizontalAlignment.Left;
-            txtPassword.UseSystemPasswordChar = false;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 

@@ -67,6 +67,7 @@
             chAuthor2 = new ColumnHeader();
             chData = new ColumnHeader();
             grpInProgress = new ReaLTaiizor.Controls.HopeGroupBox();
+            btnEdit = new ReaLTaiizor.Controls.CyberButton();
             lstInProgress = new ReaLTaiizor.Controls.PoisonListView();
             chTitle = new ColumnHeader();
             chAuthor = new ColumnHeader();
@@ -80,7 +81,6 @@
             tabClose = new TabPage();
             imageList2 = new ImageList(components);
             imageList1 = new ImageList(components);
-            btnEdit = new ReaLTaiizor.Controls.CyberButton();
             tabPageMain.SuspendLayout();
             tabHome.SuspendLayout();
             hopeGroupBox5.SuspendLayout();
@@ -928,6 +928,49 @@
             grpInProgress.Text = "hopeGroupBox1";
             grpInProgress.ThemeColor = Color.FromArgb(156, 133, 195);
             // 
+            // btnEdit
+            // 
+            btnEdit.Alpha = 20;
+            btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEdit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnEdit.BackColor = Color.Transparent;
+            btnEdit.Background = true;
+            btnEdit.Background_WidthPen = 0F;
+            btnEdit.BackgroundPen = true;
+            btnEdit.ColorBackground = Color.FromArgb(179, 229, 196);
+            btnEdit.ColorBackground_1 = Color.FromArgb(179, 229, 196);
+            btnEdit.ColorBackground_2 = Color.FromArgb(179, 229, 196);
+            btnEdit.ColorBackground_Pen = Color.Gray;
+            btnEdit.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnEdit.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnEdit.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnEdit.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnEdit.Effect_1 = true;
+            btnEdit.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnEdit.Effect_1_Transparency = 25;
+            btnEdit.Effect_2 = true;
+            btnEdit.Effect_2_ColorBackground = Color.White;
+            btnEdit.Effect_2_Transparency = 20;
+            btnEdit.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.FromArgb(245, 245, 245);
+            btnEdit.Lighting = false;
+            btnEdit.LinearGradient_Background = false;
+            btnEdit.LinearGradientPen = false;
+            btnEdit.Location = new Point(721, 219);
+            btnEdit.Name = "btnEdit";
+            btnEdit.PenWidth = 15;
+            btnEdit.Rounding = true;
+            btnEdit.RoundingInt = 70;
+            btnEdit.Size = new Size(110, 43);
+            btnEdit.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnEdit.TabIndex = 12;
+            btnEdit.Tag = "Cyber";
+            btnEdit.TextButton = "Edit";
+            btnEdit.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnEdit.Timer_Effect_1 = 5;
+            btnEdit.Timer_RGB = 300;
+            btnEdit.Click += btnEdit_Click;
+            // 
             // lstInProgress
             // 
             lstInProgress.BackColor = Color.FromArgb(209, 186, 255);
@@ -1144,49 +1187,6 @@
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
-            // 
-            // btnEdit
-            // 
-            btnEdit.Alpha = 20;
-            btnEdit.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnEdit.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            btnEdit.BackColor = Color.Transparent;
-            btnEdit.Background = true;
-            btnEdit.Background_WidthPen = 0F;
-            btnEdit.BackgroundPen = true;
-            btnEdit.ColorBackground = Color.FromArgb(179, 229, 196);
-            btnEdit.ColorBackground_1 = Color.FromArgb(179, 229, 196);
-            btnEdit.ColorBackground_2 = Color.FromArgb(179, 229, 196);
-            btnEdit.ColorBackground_Pen = Color.Gray;
-            btnEdit.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnEdit.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnEdit.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnEdit.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnEdit.Effect_1 = true;
-            btnEdit.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnEdit.Effect_1_Transparency = 25;
-            btnEdit.Effect_2 = true;
-            btnEdit.Effect_2_ColorBackground = Color.White;
-            btnEdit.Effect_2_Transparency = 20;
-            btnEdit.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEdit.ForeColor = Color.FromArgb(245, 245, 245);
-            btnEdit.Lighting = false;
-            btnEdit.LinearGradient_Background = false;
-            btnEdit.LinearGradientPen = false;
-            btnEdit.Location = new Point(721, 219);
-            btnEdit.Name = "btnEdit";
-            btnEdit.PenWidth = 15;
-            btnEdit.Rounding = true;
-            btnEdit.RoundingInt = 70;
-            btnEdit.Size = new Size(110, 43);
-            btnEdit.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnEdit.TabIndex = 12;
-            btnEdit.Tag = "Cyber";
-            btnEdit.TextButton = "Edit";
-            btnEdit.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnEdit.Timer_Effect_1 = 5;
-            btnEdit.Timer_RGB = 300;
-            btnEdit.Click += btnEdit_Click;
             // 
             // MainForm
             // 
