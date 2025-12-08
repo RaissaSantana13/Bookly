@@ -19,6 +19,10 @@ namespace Bookly.App
             PopulateLists();
         }
 
+        #region Home
+
+
+        #endregion
         #region Libary
         protected void PopulateLists()
         {
