@@ -73,6 +73,8 @@ namespace Bookly.App.Infra
                         config.CreateMap<Author, AuthorViewModel>();
                         config.CreateMap<Book, BookViewModel>();
                         config.CreateMap<ReadingSession, ReadingSessionViewModel>();
+                        config.CreateMap<Genre, GenreViewModel>();
+                        config.CreateMap<ReadingProcess, ReadingProcessViewModel>();
                     },
                     NullLoggerFactory.Instance).CreateMapper()
                 );
