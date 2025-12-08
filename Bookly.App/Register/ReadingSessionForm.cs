@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,12 +46,9 @@ namespace Bookly.App.Register
                     MessageBox.Show("Invalid number of pages.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (!DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy",
-                    System.Globalization.CultureInfo.InvariantCulture,
-                    System.Globalization.DateTimeStyles.None,
-                    out DateTime sessionDate))
+                if (!DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime sessionDate))
                 {
-                    MessageBox.Show("Invalid date! Please use the format dd/MM/yyyy (e.g., 25/12/2024).", "Date Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Data inválida. Por favor, use o formato dd/MM/yyyy.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 int totalBookPages = _currentProcess.Book.Pages;

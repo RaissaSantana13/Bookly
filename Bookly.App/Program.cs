@@ -18,8 +18,6 @@ namespace Bookly.App
             InitialForm initialForm = new InitialForm();
             if (initialForm.ShowDialog() == DialogResult.OK)
             {
-                // 3. AGORA sim, iniciamos a aplicação principal com o MainForm
-                // Quando o MainForm fechar, a aplicação encerra.
                 Application.Run(new MainForm());
             }
         }
