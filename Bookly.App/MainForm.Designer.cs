@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             tabPageMain = new ReaLTaiizor.Controls.AirTabPage();
             tabHome = new TabPage();
+            hopeGroupBox5 = new ReaLTaiizor.Controls.HopeGroupBox();
+            kryptonMonthCalendar1 = new Krypton.Toolkit.KryptonMonthCalendar();
+            label11 = new Label();
+            cyberButton2 = new ReaLTaiizor.Controls.CyberButton();
+            cyberButton10 = new ReaLTaiizor.Controls.CyberButton();
+            cyberButton11 = new ReaLTaiizor.Controls.CyberButton();
             hopeGroupBox4 = new ReaLTaiizor.Controls.HopeGroupBox();
             plotDaysMonth = new ScottPlot.WinForms.FormsPlot();
             label7 = new Label();
@@ -76,6 +82,7 @@
             imageList1 = new ImageList(components);
             tabPageMain.SuspendLayout();
             tabHome.SuspendLayout();
+            hopeGroupBox5.SuspendLayout();
             hopeGroupBox4.SuspendLayout();
             hopeGroupBox3.SuspendLayout();
             hopeGroupBox2.SuspendLayout();
@@ -116,17 +123,193 @@
             tabHome.AutoScrollMargin = new Size(10, 10);
             tabHome.AutoScrollMinSize = new Size(10, 10);
             tabHome.BackColor = Color.FromArgb(30, 30, 38);
+            tabHome.Controls.Add(hopeGroupBox5);
             tabHome.Controls.Add(hopeGroupBox4);
             tabHome.Controls.Add(hopeGroupBox3);
             tabHome.Controls.Add(hopeGroupBox2);
             tabHome.Controls.Add(hopeGroupBox1);
             tabHome.Controls.Add(label2);
+            tabHome.Font = new Font("Segoe UI", 16F);
             tabHome.ImageIndex = 2;
             tabHome.Location = new Point(89, 4);
             tabHome.Name = "tabHome";
             tabHome.Padding = new Padding(3);
             tabHome.Size = new Size(1272, 729);
             tabHome.TabIndex = 0;
+            // 
+            // hopeGroupBox5
+            // 
+            hopeGroupBox5.BackColor = Color.White;
+            hopeGroupBox5.BorderColor = Color.FromArgb(209, 186, 255);
+            hopeGroupBox5.Controls.Add(kryptonMonthCalendar1);
+            hopeGroupBox5.Controls.Add(label11);
+            hopeGroupBox5.Controls.Add(cyberButton2);
+            hopeGroupBox5.Controls.Add(cyberButton10);
+            hopeGroupBox5.Controls.Add(cyberButton11);
+            hopeGroupBox5.Font = new Font("Segoe UI", 12F);
+            hopeGroupBox5.ForeColor = Color.Black;
+            hopeGroupBox5.LineColor = Color.FromArgb(220, 223, 230);
+            hopeGroupBox5.Location = new Point(317, 1067);
+            hopeGroupBox5.Name = "hopeGroupBox5";
+            hopeGroupBox5.ShowText = false;
+            hopeGroupBox5.Size = new Size(502, 350);
+            hopeGroupBox5.TabIndex = 15;
+            hopeGroupBox5.TabStop = false;
+            hopeGroupBox5.Text = "hopeGroupBox5";
+            hopeGroupBox5.ThemeColor = Color.FromArgb(156, 133, 195);
+            // 
+            // kryptonMonthCalendar1
+            // 
+            kryptonMonthCalendar1.Location = new Point(94, 101);
+            kryptonMonthCalendar1.Name = "kryptonMonthCalendar1";
+            kryptonMonthCalendar1.OverrideBolded.Day.Back.Color1 = Color.FromArgb(209, 186, 255);
+            kryptonMonthCalendar1.OverrideBolded.Day.Back.Color2 = Color.FromArgb(209, 186, 255);
+            kryptonMonthCalendar1.OverrideBolded.Day.Back.ColorStyle = Krypton.Toolkit.PaletteColorStyle.Solid;
+            kryptonMonthCalendar1.OverrideBolded.Day.Border.Color1 = Color.FromArgb(216, 75, 241);
+            kryptonMonthCalendar1.OverrideBolded.Day.Content.LongText.Color1 = Color.FromArgb(216, 75, 241);
+            kryptonMonthCalendar1.OverrideBolded.Day.Content.ShortText.Color1 = Color.FromArgb(216, 75, 241);
+            kryptonMonthCalendar1.OverrideToday.Day.Back.Color1 = Color.Transparent;
+            kryptonMonthCalendar1.Size = new Size(314, 182);
+            kryptonMonthCalendar1.TabIndex = 11;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Trebuchet MS", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.FromArgb(46, 46, 58);
+            label11.Location = new Point(138, 25);
+            label11.Name = "label11";
+            label11.Size = new Size(238, 37);
+            label11.TabIndex = 5;
+            label11.Text = "Reading history:";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // cyberButton2
+            // 
+            cyberButton2.Alpha = 20;
+            cyberButton2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cyberButton2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            cyberButton2.BackColor = Color.Transparent;
+            cyberButton2.Background = true;
+            cyberButton2.Background_WidthPen = 0F;
+            cyberButton2.BackgroundPen = true;
+            cyberButton2.ColorBackground = Color.FromArgb(179, 229, 196);
+            cyberButton2.ColorBackground_1 = Color.FromArgb(179, 229, 196);
+            cyberButton2.ColorBackground_2 = Color.FromArgb(179, 229, 196);
+            cyberButton2.ColorBackground_Pen = Color.Gray;
+            cyberButton2.ColorLighting = Color.FromArgb(29, 200, 238);
+            cyberButton2.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton2.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton2.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton2.Effect_1 = true;
+            cyberButton2.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton2.Effect_1_Transparency = 25;
+            cyberButton2.Effect_2 = true;
+            cyberButton2.Effect_2_ColorBackground = Color.White;
+            cyberButton2.Effect_2_Transparency = 20;
+            cyberButton2.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cyberButton2.ForeColor = Color.FromArgb(245, 245, 245);
+            cyberButton2.Lighting = false;
+            cyberButton2.LinearGradient_Background = false;
+            cyberButton2.LinearGradientPen = false;
+            cyberButton2.Location = new Point(965, 931);
+            cyberButton2.Name = "cyberButton2";
+            cyberButton2.PenWidth = 15;
+            cyberButton2.Rounding = true;
+            cyberButton2.RoundingInt = 70;
+            cyberButton2.Size = new Size(110, 43);
+            cyberButton2.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton2.TabIndex = 10;
+            cyberButton2.Tag = "Cyber";
+            cyberButton2.TextButton = "Delete";
+            cyberButton2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton2.Timer_Effect_1 = 5;
+            cyberButton2.Timer_RGB = 300;
+            // 
+            // cyberButton10
+            // 
+            cyberButton10.Alpha = 20;
+            cyberButton10.Anchor = AnchorStyles.Bottom;
+            cyberButton10.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            cyberButton10.BackColor = Color.Transparent;
+            cyberButton10.Background = true;
+            cyberButton10.Background_WidthPen = 0F;
+            cyberButton10.BackgroundPen = true;
+            cyberButton10.ColorBackground = Color.FromArgb(179, 229, 196);
+            cyberButton10.ColorBackground_1 = Color.FromArgb(179, 229, 196);
+            cyberButton10.ColorBackground_2 = Color.FromArgb(179, 229, 196);
+            cyberButton10.ColorBackground_Pen = Color.Gray;
+            cyberButton10.ColorLighting = Color.FromArgb(29, 200, 238);
+            cyberButton10.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton10.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton10.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton10.Effect_1 = true;
+            cyberButton10.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton10.Effect_1_Transparency = 25;
+            cyberButton10.Effect_2 = true;
+            cyberButton10.Effect_2_ColorBackground = Color.White;
+            cyberButton10.Effect_2_Transparency = 20;
+            cyberButton10.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cyberButton10.ForeColor = Color.FromArgb(245, 245, 245);
+            cyberButton10.Lighting = false;
+            cyberButton10.LinearGradient_Background = false;
+            cyberButton10.LinearGradientPen = false;
+            cyberButton10.Location = new Point(1725, 931);
+            cyberButton10.Name = "cyberButton10";
+            cyberButton10.PenWidth = 15;
+            cyberButton10.Rounding = true;
+            cyberButton10.RoundingInt = 70;
+            cyberButton10.Size = new Size(110, 43);
+            cyberButton10.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton10.TabIndex = 8;
+            cyberButton10.Tag = "Cyber";
+            cyberButton10.TextButton = "To add";
+            cyberButton10.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton10.Timer_Effect_1 = 5;
+            cyberButton10.Timer_RGB = 300;
+            // 
+            // cyberButton11
+            // 
+            cyberButton11.Alpha = 20;
+            cyberButton11.Anchor = AnchorStyles.Bottom;
+            cyberButton11.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            cyberButton11.BackColor = Color.Transparent;
+            cyberButton11.Background = true;
+            cyberButton11.Background_WidthPen = 0F;
+            cyberButton11.BackgroundPen = true;
+            cyberButton11.ColorBackground = Color.FromArgb(179, 229, 196);
+            cyberButton11.ColorBackground_1 = Color.FromArgb(179, 229, 196);
+            cyberButton11.ColorBackground_2 = Color.FromArgb(179, 229, 196);
+            cyberButton11.ColorBackground_Pen = Color.Gray;
+            cyberButton11.ColorLighting = Color.FromArgb(29, 200, 238);
+            cyberButton11.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            cyberButton11.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberButton11.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            cyberButton11.Effect_1 = true;
+            cyberButton11.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            cyberButton11.Effect_1_Transparency = 25;
+            cyberButton11.Effect_2 = true;
+            cyberButton11.Effect_2_ColorBackground = Color.White;
+            cyberButton11.Effect_2_Transparency = 20;
+            cyberButton11.Font = new Font("Trebuchet MS", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cyberButton11.ForeColor = Color.FromArgb(245, 245, 245);
+            cyberButton11.Lighting = false;
+            cyberButton11.LinearGradient_Background = false;
+            cyberButton11.LinearGradientPen = false;
+            cyberButton11.Location = new Point(1449, 931);
+            cyberButton11.Name = "cyberButton11";
+            cyberButton11.PenWidth = 15;
+            cyberButton11.Rounding = true;
+            cyberButton11.RoundingInt = 70;
+            cyberButton11.Size = new Size(259, 43);
+            cyberButton11.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            cyberButton11.TabIndex = 7;
+            cyberButton11.Tag = "Cyber";
+            cyberButton11.TextButton = "Register Reading Session";
+            cyberButton11.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            cyberButton11.Timer_Effect_1 = 5;
+            cyberButton11.Timer_RGB = 300;
             // 
             // hopeGroupBox4
             // 
@@ -977,6 +1160,8 @@
             tabPageMain.ResumeLayout(false);
             tabHome.ResumeLayout(false);
             tabHome.PerformLayout();
+            hopeGroupBox5.ResumeLayout(false);
+            hopeGroupBox5.PerformLayout();
             hopeGroupBox4.ResumeLayout(false);
             hopeGroupBox4.PerformLayout();
             hopeGroupBox3.ResumeLayout(false);
@@ -1037,5 +1222,11 @@
         private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox4;
         private Label label7;
         private ScottPlot.WinForms.FormsPlot plotDaysMonth;
+        private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox5;
+        private Label label11;
+        private ReaLTaiizor.Controls.CyberButton cyberButton2;
+        private ReaLTaiizor.Controls.CyberButton cyberButton10;
+        private ReaLTaiizor.Controls.CyberButton cyberButton11;
+        private Krypton.Toolkit.KryptonMonthCalendar kryptonMonthCalendar1;
     }
 }

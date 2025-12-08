@@ -6,14 +6,6 @@ using Bookly.Domain.Entities;
 using Bookly.Service.Validators;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bookly.App.Register
@@ -34,64 +26,71 @@ namespace Bookly.App.Register
         public ReadingSessionForm(ReadingProcessViewModel readingProcess) : this()
         {
             _currentProcess = readingProcess;
-            txtDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
-
         protected override void Save()
         {
             try
             {
+                if (_currentProcess.User == null)
+                {
+                    MessageBox.Show("Erro crítico: Dados do usuário não foram carregados. Reinicie a aplicação.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (!int.TryParse(txtPagesRead.Text, out int pagesReadToday))
                 {
-                    MessageBox.Show("Invalid number of pages.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Número de páginas inválido.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (!DateTime.TryParseExact(txtDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime sessionDate))
+
+                if (!DateTime.TryParse(txtDate.Text, out DateTime sessionDate))
                 {
-                    MessageBox.Show("Data inválida. Por favor, use o formato dd/MM/yyyy.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Data inválida. Use o formato AAAA-MM-DD ou DD/MM/AAAA.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
                 int totalBookPages = _currentProcess.Book.Pages;
                 int alreadyReadPages = _currentProcess.PagesRead;
 
                 if (alreadyReadPages + pagesReadToday > totalBookPages)
                 {
-                    MessageBox.Show($"Error: This exceeds the total pages ({totalBookPages}).", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"Erro: Ultrapassa o total de páginas ({totalBookPages}).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
                 _currentProcess.PagesRead += pagesReadToday;
 
                 if (_currentProcess.PagesRead == totalBookPages)
                 {
                     _currentProcess.Status = "Completed";
                     _currentProcess.EndDate = sessionDate;
-                    MessageBox.Show("Congratulations! You have finished this book.", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Parabéns! Livro concluído.", "Concluído", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
                 var newSession = new ReadingSessionViewModel
                 {
                     Date = sessionDate,
                     PagesReadToday = pagesReadToday,
-                    UserId = _currentProcess.User.Id,
+                    UserId = _currentProcess.User.Id, 
                     BookId = _currentProcess.Book.Id,
                     ReadingProcessId = _currentProcess.Id,
                     User = null,
                     Book = null,
                     ReadingProcess = null
                 };
+
                 _readingSessionService.Add<ReadingSessionViewModel, ReadingSessionViewModel, ReadingSessionValidator>(newSession);
                 _readingProcessService.Update<ReadingProcessViewModel, ReadingProcessViewModel, ReadingProcessValidator>(_currentProcess);
 
-                MessageBox.Show("Reading session successfully recorded!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sessão registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving: {ex.Message} \n Details:{ex.InnerException?.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Erro ao salvar: {ex.Message}\n{ex.InnerException?.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
-

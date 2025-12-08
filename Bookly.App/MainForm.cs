@@ -1,4 +1,5 @@
 using Bookly.App.Infra;
+using Bookly.App.Others;
 using Bookly.App.Register;
 using Bookly.App.ViewModel;
 using Bookly.Domain.Base;
@@ -35,6 +36,28 @@ namespace Bookly.App
             CalculateDailyStreak(allReadingDates);
             CalculateWeeklyStreak(allReadingDates);
             UpdateBarGraph(allReadingDates);
+            UpdateKryptonCalendar(allProcesses);
+
+        }
+
+        private void UpdateKryptonCalendar(List<ReadingProcessViewModel> allProcesses)
+        {
+            // 1. Limpa marcações antigas
+            kryptonMonthCalendar1.RemoveAllBoldedDates();
+
+            // 2. Filtra todas as datas únicas que tiveram sessão de leitura
+            var readingDates = allProcesses
+                .Where(p => p.ReadingSessions != null)
+                .SelectMany(p => p.ReadingSessions)
+                .Select(s => s.Date.Date) // Remove a hora, pega só a data
+                .Distinct()
+                .ToList();
+
+            // 3. Adiciona essas datas à lista de "Negrito" (que configuramos como Roxo)
+            foreach (var date in readingDates)
+            {
+                kryptonMonthCalendar1.AddBoldedDate(date);
+            }
         }
 
         private void CalculateBooksReadThisYear(List<ReadingProcessViewModel> processes)
@@ -118,17 +141,21 @@ namespace Bookly.App
 
             plotDaysMonth.Plot.Clear();
             var bars = plotDaysMonth.Plot.Add.Bars(positions, values);
-            bars.Color = ScottPlot.Color.FromHex("#9C85C3"); 
+            bars.Color = ScottPlot.Color.FromHex("#9C85C3");
+
             foreach (var bar in bars.Bars)
             {
                 bar.Label = bar.Value.ToString();
             }
+
             bars.ValueLabelStyle.ForeColor = ScottPlot.Color.FromHex("#483D8B");
             bars.ValueLabelStyle.FontSize = 14;
             bars.ValueLabelStyle.Bold = true;
             plotDaysMonth.Plot.Axes.Bottom.TickGenerator = new ScottPlot.TickGenerators.NumericManual(positions, labels);
             plotDaysMonth.Plot.Grid.MajorLineColor = ScottPlot.Color.FromHex("#00000000");
             plotDaysMonth.Plot.Axes.Margins(bottom: 0);
+            double maxVal = values.Length > 0 ? values.Max() : 0;
+            plotDaysMonth.Plot.Axes.SetLimitsY(0, maxVal + 1);
             plotDaysMonth.Refresh();
         }
 
@@ -139,7 +166,7 @@ namespace Bookly.App
         protected void PopulateLists()
         {
             var result = _readingProcessService?.Get<ReadingProcessViewModel>(
-        new List<string> { "Book", "Book.Authors", "ReadingSessions" });
+            new List<string> { "Book", "Book.Authors", "ReadingSessions", "User" });
 
             var processes = result?.ToList() ?? new List<ReadingProcessViewModel>();
 
@@ -337,6 +364,7 @@ namespace Bookly.App
             }
             if (tabPageMain.SelectedTab == tabClose)
             {
+                UserSession.Logout();
                 this.Close();
             }
         }
