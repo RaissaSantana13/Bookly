@@ -6,6 +6,7 @@ using Bookly.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
 
+
 namespace Bookly.App
 {
     public partial class MainForm : LostForm
@@ -20,20 +21,134 @@ namespace Bookly.App
         }
 
         #region Home
+        private void LoadDashboard(List<ReadingProcessViewModel> allProcesses)
+        {
+            CalculateBooksReadThisYear(allProcesses);
+            var allReadingDates = allProcesses
+                .Where(p => p.ReadingSessions != null)
+                .SelectMany(p => p.ReadingSessions)
+                .Select(s => s.Date.Date)
+                .Distinct() 
+                .OrderByDescending(d => d)
+                .ToList();
+
+            CalculateDailyStreak(allReadingDates);
+            CalculateWeeklyStreak(allReadingDates);
+            UpdateBarGraph(allReadingDates);
+        }
+
+        private void CalculateBooksReadThisYear(List<ReadingProcessViewModel> processes)
+        {
+            int count = processes.Count(p =>
+                p.Status == "Completed" &&
+                p.EndDate != DateTime.MinValue &&
+                p.EndDate.Year == DateTime.Now.Year);
+
+            lblBookYear.Text = $"You read {count} books this year.";
+        }
+
+        private void CalculateDailyStreak(List<DateTime> sortedDates)
+        {
+            int streak = 0;
+            var checkDate = DateTime.Today;
+            if (!sortedDates.Contains(checkDate))
+            {
+                checkDate = checkDate.AddDays(-1);
+                if (!sortedDates.Contains(checkDate))
+                {
+                    lblDays.Text = "0";
+                    return;
+                }
+            }
+            while (sortedDates.Contains(checkDate))
+            {
+                streak++;
+                checkDate = checkDate.AddDays(-1);
+            }
+
+            lblDays.Text = streak.ToString();
+        }
+
+        private void CalculateWeeklyStreak(List<DateTime> sortedDates)
+        {
+
+            if (!sortedDates.Any())
+            {
+                lblWeek.Text = "0";
+                return;
+            }
+
+            int streakWeeks = 0;
+            var currentCheck = DateTime.Today;
+
+            bool hasReadingInBlock = true;
+
+            while (hasReadingInBlock)
+            {
+                var startOfWeek = currentCheck.AddDays(-6);
+                bool readThisWeek = sortedDates.Any(d => d <= currentCheck && d >= startOfWeek);
+
+                if (readThisWeek)
+                {
+                    streakWeeks++;
+                    currentCheck = currentCheck.AddDays(-7); 
+                }
+                else
+                {
+                    hasReadingInBlock = false;
+                }
+            }
+
+            lblWeek.Text = streakWeeks.ToString();
+        }
+
+        private void UpdateBarGraph(List<DateTime> allDates)
+        {
+            double[] values = new double[12];
+            double[] positions = new double[12];
+
+            string[] labels = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+            for (int i = 0; i < 12; i++)
+            {
+                int count = allDates.Count(d => d.Month == i + 1 && d.Year == DateTime.Now.Year);
+                values[i] = count;
+                positions[i] = i;
+            }
+
+            plotDaysMonth.Plot.Clear();
+            var bars = plotDaysMonth.Plot.Add.Bars(positions, values);
+            bars.Color = ScottPlot.Color.FromHex("#9C85C3"); 
+            foreach (var bar in bars.Bars)
+            {
+                bar.Label = bar.Value.ToString();
+            }
+            bars.ValueLabelStyle.ForeColor = ScottPlot.Color.FromHex("#483D8B");
+            bars.ValueLabelStyle.FontSize = 14;
+            bars.ValueLabelStyle.Bold = true;
+            plotDaysMonth.Plot.Axes.Bottom.TickGenerator = new ScottPlot.TickGenerators.NumericManual(positions, labels);
+            plotDaysMonth.Plot.Grid.MajorLineColor = ScottPlot.Color.FromHex("#00000000");
+            plotDaysMonth.Plot.Axes.Margins(bottom: 0);
+            plotDaysMonth.Refresh();
+        }
 
 
         #endregion
+
         #region Libary
         protected void PopulateLists()
         {
-            var result = _readingProcessService?.Get<ReadingProcessViewModel>(new List<string> { "Book", "Book.Authors" });
+            var result = _readingProcessService?.Get<ReadingProcessViewModel>(
+        new List<string> { "Book", "Book.Authors", "ReadingSessions" });
+
             var processes = result?.ToList() ?? new List<ReadingProcessViewModel>();
+
             lstInProgress.Items.Clear();
             lstCompleted.Items.Clear();
             foreach (var process in processes)
             {
                 string authorName = GetAuthorName(process);
-                bool isCompleted = process.Status == "Completed" || process.Status == "Completed";
+                bool isCompleted = process.Status == "Completed";
 
                 if (isCompleted)
                 {
@@ -46,6 +161,8 @@ namespace Bookly.App
                     lstInProgress.Items.Add(item);
                 }
             }
+
+            LoadDashboard(processes);
         }
 
         private string GetAuthorName(ReadingProcessViewModel process)

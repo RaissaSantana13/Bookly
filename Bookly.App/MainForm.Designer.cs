@@ -33,6 +33,8 @@
             tabClose = new ReaLTaiizor.Controls.AirTabPage();
             tabPage1 = new TabPage();
             hopeGroupBox4 = new ReaLTaiizor.Controls.HopeGroupBox();
+            plotDaysMonth = new ScottPlot.WinForms.FormsPlot();
+            label7 = new Label();
             hopeGroupBox3 = new ReaLTaiizor.Controls.HopeGroupBox();
             label6 = new Label();
             lblDays = new Label();
@@ -72,8 +74,6 @@
             tabPage3 = new TabPage();
             imageList2 = new ImageList(components);
             imageList1 = new ImageList(components);
-            parrotBarGraph1 = new ReaLTaiizor.Controls.ParrotBarGraph();
-            label7 = new Label();
             tabClose.SuspendLayout();
             tabPage1.SuspendLayout();
             hopeGroupBox4.SuspendLayout();
@@ -131,8 +131,8 @@
             // hopeGroupBox4
             // 
             hopeGroupBox4.BorderColor = Color.FromArgb(220, 223, 230);
+            hopeGroupBox4.Controls.Add(plotDaysMonth);
             hopeGroupBox4.Controls.Add(label7);
-            hopeGroupBox4.Controls.Add(parrotBarGraph1);
             hopeGroupBox4.Font = new Font("Segoe UI", 12F);
             hopeGroupBox4.ForeColor = Color.FromArgb(48, 49, 51);
             hopeGroupBox4.LineColor = Color.FromArgb(220, 223, 230);
@@ -144,6 +144,26 @@
             hopeGroupBox4.TabStop = false;
             hopeGroupBox4.Text = "hopeGroupBox4";
             hopeGroupBox4.ThemeColor = Color.FromArgb(156, 133, 195);
+            // 
+            // plotDaysMonth
+            // 
+            plotDaysMonth.DisplayScale = 1F;
+            plotDaysMonth.Location = new Point(49, 89);
+            plotDaysMonth.Name = "plotDaysMonth";
+            plotDaysMonth.Size = new Size(1011, 269);
+            plotDaysMonth.TabIndex = 15;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Trebuchet MS", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(46, 46, 58);
+            label7.Location = new Point(259, 25);
+            label7.Name = "label7";
+            label7.Size = new Size(585, 61);
+            label7.TabIndex = 14;
+            label7.Text = "Reading days per month:";
             // 
             // hopeGroupBox3
             // 
@@ -924,7 +944,6 @@
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(1272, 729);
             tabPage3.TabIndex = 2;
-            tabPage3.Click += tabClose_Click;
             // 
             // imageList2
             // 
@@ -940,41 +959,6 @@
             imageList1.ColorDepth = ColorDepth.Depth32Bit;
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
-            // 
-            // parrotBarGraph1
-            // 
-            parrotBarGraph1.BackColor = Color.FromArgb(156, 133, 195);
-            parrotBarGraph1.FilledColor = Color.FromArgb(156, 133, 195);
-            parrotBarGraph1.ForeColor = Color.FromArgb(156, 133, 195);
-            parrotBarGraph1.GraphOrientation = ReaLTaiizor.Controls.ParrotBarGraph.Orientation.Vertical;
-            parrotBarGraph1.GraphStyle = ReaLTaiizor.Controls.ParrotBarGraph.Style.Material;
-            parrotBarGraph1.ImeMode = ImeMode.NoControl;
-            parrotBarGraph1.Items = (List<int>)resources.GetObject("parrotBarGraph1.Items");
-            parrotBarGraph1.Location = new Point(82, 106);
-            parrotBarGraph1.Name = "parrotBarGraph1";
-            parrotBarGraph1.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            parrotBarGraph1.ShowGrid = false;
-            parrotBarGraph1.Size = new Size(964, 260);
-            parrotBarGraph1.Sorting = ReaLTaiizor.Controls.ParrotBarGraph.SortStyle.Normal;
-            parrotBarGraph1.SplitterColor = Color.FromArgb(156, 133, 195);
-            parrotBarGraph1.TabIndex = 0;
-            parrotBarGraph1.Text = "parrotBarGraph1";
-            parrotBarGraph1.TextAlignment = ReaLTaiizor.Controls.ParrotBarGraph.Aligning.Far;
-            parrotBarGraph1.TextColor = Color.FromArgb(120, 120, 120);
-            parrotBarGraph1.TextRenderingType = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            parrotBarGraph1.UnfilledColor = Color.FromArgb(37, 40, 49);
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Trebuchet MS", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(46, 46, 58);
-            label7.Location = new Point(259, 25);
-            label7.Name = "label7";
-            label7.Size = new Size(585, 61);
-            label7.TabIndex = 14;
-            label7.Text = "Reading days per month:";
             // 
             // MainForm
             // 
@@ -1051,7 +1035,7 @@
         private ReaLTaiizor.Controls.CyberButton cyberButton9;
         private Label label4;
         private ReaLTaiizor.Controls.HopeGroupBox hopeGroupBox4;
-        private ReaLTaiizor.Controls.ParrotBarGraph parrotBarGraph1;
         private Label label7;
+        private ScottPlot.WinForms.FormsPlot plotDaysMonth;
     }
 }
