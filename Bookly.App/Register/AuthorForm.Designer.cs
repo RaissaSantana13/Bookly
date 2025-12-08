@@ -42,7 +42,7 @@
             // 
             // txtName
             // 
-            txtName.BackColor = Color.White;
+            txtName.BackColor = Color.FromArgb(209, 186, 255);
             txtName.BaseColor = Color.FromArgb(44, 55, 66);
             txtName.BorderColorA = Color.FromArgb(64, 158, 255);
             txtName.BorderColorB = Color.FromArgb(220, 223, 230);
@@ -65,7 +65,7 @@
             // 
             // txtId
             // 
-            txtId.BackColor = Color.White;
+            txtId.BackColor = Color.FromArgb(209, 186, 255);
             txtId.BaseColor = Color.FromArgb(44, 55, 66);
             txtId.BorderColorA = Color.FromArgb(64, 158, 255);
             txtId.BorderColorB = Color.FromArgb(220, 223, 230);

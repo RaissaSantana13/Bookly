@@ -61,6 +61,7 @@
             // airTabPage1
             // 
             airTabPage1.Alignment = TabAlignment.Left;
+            airTabPage1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             airTabPage1.BaseColor = Color.FromArgb(126, 87, 194);
             airTabPage1.Controls.Add(tabPage1);
             airTabPage1.Controls.Add(tbLibary);
@@ -214,7 +215,7 @@
             // btnExcluir
             // 
             btnExcluir.Alpha = 20;
-            btnExcluir.Anchor = AnchorStyles.Left;
+            btnExcluir.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnExcluir.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnExcluir.BackColor = Color.Transparent;
             btnExcluir.Background = true;
@@ -257,7 +258,7 @@
             // btnAdd
             // 
             btnAdd.Alpha = 20;
-            btnAdd.Anchor = AnchorStyles.Left;
+            btnAdd.Anchor = AnchorStyles.Bottom;
             btnAdd.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnAdd.BackColor = Color.Transparent;
             btnAdd.Background = true;
@@ -300,7 +301,7 @@
             // btnReadingSession
             // 
             btnReadingSession.Alpha = 20;
-            btnReadingSession.Anchor = AnchorStyles.Left;
+            btnReadingSession.Anchor = AnchorStyles.Bottom;
             btnReadingSession.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             btnReadingSession.BackColor = Color.Transparent;
             btnReadingSession.Background = true;
@@ -400,6 +401,7 @@
             Image = null;
             Name = "MainForm";
             Text = "Bookly";
+            WindowState = FormWindowState.Maximized;
             airTabPage1.ResumeLayout(false);
             tbLibary.ResumeLayout(false);
             tbLibary.PerformLayout();
