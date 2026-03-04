@@ -56,3 +56,60 @@ O projeto segue uma divisão clara de responsabilidades:
 ## 👨‍💻 Autor
 
 Projeto desenvolvido com foco em boas práticas de engenharia de software e arquitetura limpa em ambiente.
+
+
+---
+
+# 📚 Bookly - Reading Management System
+
+**Bookly** is a robust literary management application developed in C#, designed to organize personal libraries and monitor reading progress in detail. The system utilizes an organized architecture and modern technologies to ensure scalability and efficient maintenance.
+
+---
+
+## Features and Highlights
+
+* **Complete Collection Management:** Registration and maintenance of Authors, Books, Genres, and Users.
+* **Reading Tracking:** System to record "Reading Processes" and individual sessions, allowing page-by-page progress tracking.
+* **Dependency Injection (DI):** Use of `Microsoft.Extensions.DependencyInjection` to manage the lifecycle of repositories, services, and forms.
+* **Automated Mapping:** Integration with **AutoMapper** to efficiently convert domain entities into ViewModels.
+* **Relational Database:** Data persistence using **MySQL** with entity mapping via Entity Framework Core.
+* **Data Seeding:** Automatic database population with predefined literary genres (Science Fiction, Romance, Fantasy, Horror, etc.).
+
+---
+
+## Technologies Used
+
+* **Language:** C# (.NET).
+* **ORM:** **Entity Framework Core** for data layer abstraction.
+* **Database:** MySQL.
+* **Object Mapping:** **AutoMapper**.
+* **Interface:** Windows Forms (WinForms).
+* **Design Patterns:** Repository Pattern and Service Layer.
+
+---
+
+## Project Structure
+
+The project follows a clear separation of concerns:
+
+* **Bookly.App:** Presentation layer containing forms (Login, Book Registration, Authors) and the Dependency Injection infrastructure configuration.
+* **Bookly.Domain:** Definition of core entities (Author, Book, ReadingSession, User) and base interfaces.
+* **Bookly.Repository:** Database access implementation, Entity Framework context (`BooklyContext`), and Fluent API mappings.
+* **Bookly.Service:** Business logic layer and validators.
+
+---
+
+## System Configuration
+
+1. **Database:** The system uses a MySQL connection string stored in the `Config/DbConfig.txt` file.
+2. **Migrations:** The context is configured to ensure automatic database creation via `Database.EnsureCreated()`.
+3. **Dependencies:** Ensure you restore the following NuGet packages:
+    * `Microsoft.EntityFrameworkCore.MySQL`
+    * `AutoMapper`
+    * `Microsoft.Extensions.DependencyInjection`
+
+---
+
+## 👨‍💻 Author
+
+Project developed with a focus on software engineering best practices and clean architecture.
