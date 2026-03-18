@@ -8,6 +8,15 @@
 O **Bookly** é uma aplicação robusta de gestão literária desenvolvida em C#, projetada para organizar bibliotecas pessoais e monitorizar o progresso de leitura de forma detalhada. O sistema utiliza uma arquitetura organizada e tecnologias modernas para garantir escalabilidade e manutenção eficiente.
 
 ---
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/db14009b-bc5d-48ca-9550-f5e4e19fe0ff" alt="Interface do Bookly" width="85%">
+
+  <br><br>
+
+  <a href="https://player.cloudinary.com/embed/?cloud_name=dzkjdll3l&public_id=Bookly" target="_blank">
+    <img src="https://img.shields.io/badge/ASSISTIR-DEMO%20VÍDEO-red?style=for-the-badge&logo=youtube" alt="Assistir Demonstração do Bookly">
+  </a>
+</div>
 
 ## Funcionalidades e Destaques
 
